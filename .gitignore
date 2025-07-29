@@ -1,0 +1,21 @@
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+
+# VSCode or IDEs (optional)
+.vscode/
+.idea/
+
+# OS metadata
+Thumbs.db
+Desktop.ini
+
+# Artifacts or output folders
+artifacts/
+*.log
+
+# Secrets (in case you use them later)
+.env
