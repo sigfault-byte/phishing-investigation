@@ -3,7 +3,7 @@
 
 ### Impersonating **ANTAI** - **Agence National de Traitement Automatique des Infractions**.
 
-Well crafted [email](/evidence/scamAntai_Raw_email.txt)
+Well crafted [email](evidence/scamAntai_Raw_email.txt)
 
 ---
 # Relevant Email headers
