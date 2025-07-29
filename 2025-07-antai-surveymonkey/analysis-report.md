@@ -65,7 +65,7 @@ graph TD
 
 [ChromeDevTool Screenshot](evidence/Screenshot-2025-07.png)
 
-Page source: [Scam1_LastRedirectWordpress]
+[Page source](evidence/LastRedir.html)
 
 ---
 # Infrastructure / Recon
