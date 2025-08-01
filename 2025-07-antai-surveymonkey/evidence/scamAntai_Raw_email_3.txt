@@ -1,0 +1,647 @@
+Return-path: <waturlo2kin4@korea.ac.kr>
+
+Original-recipient: rfc822;redacted@mail.com
+
+Received: from p00-icloudmta-smtpin-us-central-1n-100-percent-17 by p163-mailgateway-smtp-5d6c6b7499-fv7bh (mailgateway 2528B40)
+
+with SMTP id f455c994-aabd-4b60-8302-d0e7e8204c29 
+
+for <redacted@mail.com>; Tue, 29 Jul 2025 19:24:49 GMT
+
+X-Apple-MoveToFolder: INBOX 
+
+X-Apple-Action: MOVE_TO_FOLDER/INBOX
+
+X-Apple-UUID: f455c994-aabd-4b60-8302-d0e7e8204c29
+
+Received: from TYPPR03CU001.outbound.protection.outlook.com (mail-japaneastazon11022093.outbound.protection.outlook.com [52.101.126.93])
+
+by p00-icloudmta-smtpin-us-central-1n-100-percent-17 (Postfix) with ESMTPS id EC4D6C000A7
+
+for <redacted@mail.com>; Tue, 29 Jul 2025 19:24:44 +0000 (UTC)
+
+X-ICL-Info: GAtbRFYEBVBFTVJHSwMFUFUKE0oQVV8PERgKG1hDXxJITFRZSQAHTERLUFlBAxYHEUQRFgxFRA4aSw0eFgR2CRoLAxZWUVVMHgtGERwNXQ0HHAdZGVMYCQdZFBRFUVoHDRgIEwpVGAYQGgcaCF9DIhwaChgNVBgBGhRGHx1cWV8hIDYnKgAFISBJVkZWX0MWFxYTGRweRhAaDQMUDFlZDFsWEwMUX1kJWxoJGlhAQhBIFAceFB1cAwUYCBIZQ0IDDxYIRkkABFBFQFVZF0VCABoMCBNWQEQNARwFAxFfWEwaDBIbF19dTBYWC1ccVAsJGgsDFhdWUAsWHEgYFl1fAQcWFRgeRBgBGhRGGhFUC15DHFISHgEBBlgYUENPHQQAF0tLQBoEAE9DGgBBTwgGBBEcUkA4W1kQEBhIFhseXRBL
+
+X-ICL-Score: 3.43204403332
+
+Authentication-Results: bimi.icloud.com; bimi=skipped reason="insufficient dmarc"
+
+X-ARC-Info: policy=pass; arc=pass; id=mx.microsoft.com 1
+
+Authentication-Results: arc.icloud.com; arc=pass
+
+Authentication-Results: dmarc.icloud.com; dmarc=fail header.from=korea.ac.kr
+
+X-DMARC-Policy: v=DMARC1; p=none;
+
+X-DMARC-Info: pass=fail; dmarc-policy=none; s=r0; d=r0; pdomain=korea.ac.kr
+
+Authentication-Results: dkim-verifier.icloud.com;
+
+dkim=pass (1024-bit key) header.d=koreaoffice.onmicrosoft.com header.i=@koreaoffice.onmicrosoft.com header.b=GqgHVLl5
+
+Authentication-Results: spf.icloud.com; spf=softfail (spf.icloud.com: domain of transitioning waturlo2kin4@korea.ac.kr does not designate 52.101.126.93 as permitted sender) smtp.mailfrom=waturlo2kin4@korea.ac.kr
+
+Received-SPF: softfail (spf.icloud.com: domain of transitioning waturlo2kin4@korea.ac.kr does not designate 52.101.126.93 as permitted sender) receiver=spf.icloud.com; client-ip=52.101.126.93; helo=TYPPR03CU001.outbound.protection.outlook.com; envelope-from=waturlo2kin4@korea.ac.kr
+
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+
+ b=clqmXjsTRPBLXQ18xqQXOsCPARmJQFF6TWWWg1ptstX2oBxjbmXEKvWDIOtfl0o6fDuaQwvbYByExTR0GcUEYKyO0sqhjvwJQCg7Lj+f01hztwh5l4oE/sS3s+f2Sm0zrASuPvT4HtqGzleQr5IQCvcnpDQNtkU5oSyRTdutwzyW2coZtStzYjfdIqlQM+keFqs08pPWjnQpTsPsnCWK2UgCpJ5KTvfQJNlCPjeFLoEKUdeuOX1MZ/a8JOcTxtF8tYd/dPg9tM/w9cjf4G7jCJVwgkUayjScojiImJnhfzkcnYFjfV+DxvdApwcgnsVIu1CzpzlhuFxeplyZUNs86w==
+
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+
+ s=arcselector10001;
+
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+
+ bh=mARy0Ua1FxO/AWO2W8X3uhGDDxKHOfvALoZgr6J/8r4=;
+
+ b=XkLYrlUYzJERFm77OvBjmCHkyXpMRQgxvnzOEGIN4YG53NSI5pNFYdFh7ycOe8cORB9oBKPDY+CYH1QgMRetQUdgF+zGNiOyErBxx1Y9jdTv/CRop63JvP0sNKs9zQX+OewwnwovVCsWE4KAvFbPu3UhYBIYSImxyWvYYIVv7KcLaC4vr7aPb1xkH5KVWj85OebDuVqdOL77twIk6nbIP4wGjP85EL5qqjkjgl+RQZs761D47pm8+yXtORJV5ptciszyFi2RR2klwJvTB5X904z83nLvGER2vDGiJO7lGBkUdkx4LaJvHYC/ildBLQmOFeMrniKbGf/PfyCAfe9OSg==
+
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+
+ smtp.mailfrom=korea.ac.kr; dmarc=pass action=none header.from=korea.ac.kr;
+
+ dkim=pass header.d=korea.ac.kr; arc=none
+
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+
+ d=koreaoffice.onmicrosoft.com; s=selector2-koreaoffice-onmicrosoft-com;
+
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+
+ bh=mARy0Ua1FxO/AWO2W8X3uhGDDxKHOfvALoZgr6J/8r4=;
+
+ b=GqgHVLl5TrXkYHMEYJnoxknvrWG6uzl2AsZey8417jmWo/kEtMkkZ5UQnA9xU1HQdpljxYQcH900GqhiDcbXA+N0L9CK7zy2qb45mmlgNEesdgMeX8GwfFVz0rECYe/4a5XhR6SAlQ42fW5zQzK/3wXJi+z6SpAtUHc+HNrtjRY=
+
+Received: from TYSPR02MB7953.apcprd02.prod.outlook.com (2603:1096:405:84::6)
+
+ by SEZPR02MB7038.apcprd02.prod.outlook.com (2603:1096:101:19e::14) with
+
+ Microsoft SMTP Server (version=TLS1_2,
+
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8989.11; Tue, 29 Jul
+
+ 2025 19:24:27 +0000
+
+Received: from TYSPR02MB7953.apcprd02.prod.outlook.com
+
+ ([fe80::9430:c1a0:6d39:8626]) by TYSPR02MB7953.apcprd02.prod.outlook.com
+
+ ([fe80::9430:c1a0:6d39:8626%5]) with mapi id 15.20.8989.010; Tue, 29 Jul 2025
+
+ 19:24:27 +0000
+
+Content-Type: text/html; charset=utf-8
+
+From: Antai <waturlo2kin4@korea.ac.kr>
+
+To: redacted@mail.com
+
+Subject: =?UTF-8?Q?R=C3=A9ference_=3A_K582209594481?=
+
+Message-ID: <6e4ef17d-a647-2bb2-7b46-6cf6780fde47@korea.ac.kr>
+
+Content-Transfer-Encoding: quoted-printable
+
+Date: Tue, 29 Jul 2025 19:23:00 +0000
+
+X-ClientProxiedBy: MA3P292CA0006.ESPP292.PROD.OUTLOOK.COM
+
+ (2603:10a6:250:2c::14) To TYSPR02MB7953.apcprd02.prod.outlook.com
+
+ (2603:1096:405:84::6)
+
+MIME-Version: 1.0
+
+X-MS-PublicTrafficType: Email
+
+X-MS-TrafficTypeDiagnostic: TYSPR02MB7953:EE_|SEZPR02MB7038:EE_
+
+X-MS-Office365-Filtering-Correlation-Id: bc544a50-f1fd-47dc-dd62-08ddced585b2
+
+X-MS-Exchange-SenderADCheck: 1
+
+X-MS-Exchange-AntiSpam-Relay: 0
+
+X-Microsoft-Antispam:
+
+BCL:0;ARA:13230040|52116014|376014|1800799024|41320700013|366016|8096899003|38350700014;
+
+X-Microsoft-Antispam-Message-Info:
+
+=?utf-8?B?UXlNK0RXL01ubzZKTy9NZ3N0a2phSXVaa0tnMG1zQ0ZhT1NBMVFqamZCSVBI?=
+
+ =?utf-8?B?N0g0N2dJY3ZqcVYydU1ENVIzOHNEZ3ljRG5nVm1qS0RBT0dTcm9sYjROaFha?=
+
+ =?utf-8?B?VGwzaU9mUVc3MEwycWVZeFNKZm8vcHR2d1Fvc2NTb21hMDdHdjI5S3hOTU91?=
+
+ =?utf-8?B?WFRIV3JicUo1SUdxSDdrekkvS3dsZStxUVZxN0RUSi9FbVQ2RVJTMEdiWVE4?=
+
+ =?utf-8?B?ZFo4QTdYZkVLdGpWNlJ2Mnk2NzMraCs1cU9nUStmbWhlRG1sVWZGRCtrUFg0?=
+
+ =?utf-8?B?SlZKRFpucUN6d09jZWhrTWI2UUdtSzl0QUJqMWNSSHc3SC9iWlk5TWFqUTBZ?=
+
+ =?utf-8?B?UXhtTXZwNThjOFpZTU5RclV3cFhrZnNhNlI5S3FWL3hoNFp0UkEyaE4rR2wy?=
+
+ =?utf-8?B?VnpCcmRzdHdLYTFBNitleUx5QkdGMUxQWkZ1eCtoMXRraDRxYktvcVVmekdr?=
+
+ =?utf-8?B?aTN2cjdCNUE5YTZsMXg2KzkvQTZ3QUpBSXdRcDcwcG1naXpJRWVKUTRkaHpt?=
+
+ =?utf-8?B?NkZzcVdZWmVEYm5QdHdod3pRU29nOG1WYlp6UWNzNFU4QzllZlI5SW9FNUIr?=
+
+ =?utf-8?B?UGJDSXJ5UXhESnd5YStsZFAvN09Na1R3MUI5OUt3VFFlaTBMUkl3WVBkRWwr?=
+
+ =?utf-8?B?eVNoemo2NnZQOW95Y0MzQ2VwQ0p1dU1Ra0NDdE9qNjlWNEhQRXEyaGcyTXc3?=
+
+ =?utf-8?B?bWgxUG9MbEtGRGVrSldUdDJDSnFMRWxPNHZndWRsekI4dE1Na242QTFwREhU?=
+
+ =?utf-8?B?aDdyNS90ejZQUVZ0ajVCQWVNVDV0UGVWZDRWL2FtNHR4UC8zeVRQQS9wVEhQ?=
+
+ =?utf-8?B?ZkJPZ2hHZjhjelNrRjlDcCtTbjkvL1FyZDZYUXhadCtxMXpOK29LazZtdWFI?=
+
+ =?utf-8?B?UDBicTBpbk5yT2U0aWJCVUhua25TT2JyRWl2cDc5UXIxTkRJSmtPcmozRHRE?=
+
+ =?utf-8?B?Vis3dkFuREYwV1FnNTQ5YVR0OVJIcmdrK2d1dDRwNWtvemN1NDFDbEN1aTk4?=
+
+ =?utf-8?B?SkErM1JnY2RsYU9ER3BlaVB5QTJ0YUtwNktOZDZIbTBEam5QUUF4OHUrWjhT?=
+
+ =?utf-8?B?MVd2My9zVFp5Wmxjc3hwNG9jdW11UkpVUEkvM0l2a2dvN0xQM0lDRE5aOEpx?=
+
+ =?utf-8?B?djlhclNWY2QrMU81OERlQ0pLUUpuZTI0eWlGNGdVQXdLWk1KbW9vbmZuRGt1?=
+
+ =?utf-8?B?T0tmRFJORU85NXRJcGhEZDdUNXNKcnRoU0dmVi9JOTljVHZiL29CUzJZS1pM?=
+
+ =?utf-8?B?bVo4dDFWV0kxSFoyRWhlejUxNTlldGVDVTUxN0ZFdWZIU1lFZzcrcGtDbytl?=
+
+ =?utf-8?B?bDd5bzI1ZHkydHRZL29HTitmV21FeCtKQ3lGbzJkZ3dLdmd4YjlIRDZDSDh0?=
+
+ =?utf-8?B?bGp4V2Y1YlpMdUE2dWJLWXJDWGRSSnI1VEh6ZVQ0NzdwUFkxLzByejR3ZDBM?=
+
+ =?utf-8?B?K1RVelMzMks1dHVUWU9sQ2tzVGhrTVkzRjFIYzhaQ2tjYVQ2bWlubklpdWFZ?=
+
+ =?utf-8?B?Q3RpZlhjeUxFRkZMNHhDNHQrd1duSGxpRzd5QUlSdmtvdnZpSXRBbGJUT1A3?=
+
+ =?utf-8?B?Z1ZBdUltWkJEYUJKMHh2cy9QU3ZMU1B4ZldGVmkwMXV5c1k1eENMOHRxMW5i?=
+
+ =?utf-8?B?QVBqNmp0MU82MU1CMUJmd3VtWTZMakY0S29qcld4UkxaRjhmbmMyazV5SkJ5?=
+
+ =?utf-8?B?K1R1ZzJyK05lcCtEeVZZdStQdkVzcm9oZzVxWitwRXloM2VBamRqeHhqaWJT?=
+
+ =?utf-8?B?SkxmczZFQXE0bEV4OVA4aE5tS0Yza1RsVGJlNEJveEFsVTlHSGY0bzlLU0VP?=
+
+ =?utf-8?B?UEc1bFNvL3JLcVVWNnpWUGlFb2ZXWGdzREVJMmpteTZKRmJqWnN3TTVwNkN4?=
+
+ =?utf-8?B?YTluSk5KZkMxVHRqandWMUdHeGtPMGZVN0Q2NWJBY045V0gwR3FJR3hSUExw?=
+
+ =?utf-8?Q?IZtYPV0TDmc=3D?=
+
+X-Forefront-Antispam-Report:
+
+CIP:255.255.255.255;CTRY:;LANG:fr;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:TYSPR02MB7953.apcprd02.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(52116014)(376014)(1800799024)(41320700013)(366016)(8096899003)(38350700014);DIR:OUT;SFP:1102;
+
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+
+X-MS-Exchange-AntiSpam-MessageData-0:
+
+=?utf-8?B?eXMwRW9hNDh4N2pQeDJqZVpLNVpBaitKOEorTWYya1cra04xLzF2RVJRMDBs?=
+
+ =?utf-8?B?TVpaejYxcWVEdFB4K2UvYks0Z2wvZTFvNDloRXVQQ2YyR2Y4WWVWeHFwQW1P?=
+
+ =?utf-8?B?QnJzK3lwYjVNeGRXZEQ2Yy9paWRvTyt5ZkQySUhLWjVFMncybmsrSTFaNXBN?=
+
+ =?utf-8?B?a0pjc3RkZURra3NRMmN5QU5JKzJyS0haWmt2OXFxaWtiaitZVW9rVHpzbGtx?=
+
+ =?utf-8?B?UXNQdjB1QUI1Yll1ckFETHphRjJHOGtiMHZhb0N1UWpCbFJUaHg0TkI1Yjg0?=
+
+ =?utf-8?B?NjlUQzFNNG5sQUZjZklOWFdEajZMTE16Wk5qSkpBQmZPWm5LU3liL21Ja1N2?=
+
+ =?utf-8?B?YUFuMFVDVkREUmZEcXI3OC9XU1V4UE9yVlEwRVJzTHVBTHNNWU41b3ExY2tU?=
+
+ =?utf-8?B?bHBRcTZaTW9ZWFZUK1VXMXZzQUwyMHRhQXYxQ25UMHJFU3AwaDNmd2o4aUoz?=
+
+ =?utf-8?B?OEZhbXNSekk3WWl0WVBISXBZQVJvYmxmcmc1S1lzcWIvdUt3T0JOZWQ4SWYw?=
+
+ =?utf-8?B?N0MzVDhLS3VoNlBYNFBhVzA1RXpvYkJuaW10MEJVVkgzcFh1UVA5OVNPNFBo?=
+
+ =?utf-8?B?cjRZc2Jiczk4RHRSYUtLQ0JyWWVMK1NQbjU0RjM0dFoycjRXQkNsTnlOMGd5?=
+
+ =?utf-8?B?N3p2U2dkM25nNUN4RGtzcjVDK0FsSWU4ckZkYkxFR285cjhMWHFDM01qdGFH?=
+
+ =?utf-8?B?a1dVTDVyWWI5NVFFMUhOYlVqNzFLb2FmQkZJWnpZN29lZDkyczNxK2F4MUxW?=
+
+ =?utf-8?B?WmwzZEM5UVBjTlJvUThVZVV4Z2VHQ1M5Y0M5elRFQnFBeFVHRlRJdUNMYWNS?=
+
+ =?utf-8?B?eVdkVHpsTXVRVEpOMVdmaEx5RUJUNFJkSUdwTzlvaXlBVklhR0NhY2tVWU5F?=
+
+ =?utf-8?B?TTFySm5HbEo5ZmIvNGRGVTZBWWJNQ1oyMUVFSmtpZzVxMFZtb3BrSmV3Vjlo?=
+
+ =?utf-8?B?SlB0NjR5OWg1SHo5czFnSnNJZjhmWHBvR2FGRlJEbFBLaUdmMVVxMDhWUHN3?=
+
+ =?utf-8?B?WTJob1oxYkN1V0pJcUpVLytrWTZ0cktHT01zQXFGS3dJd1RhckV0ekdlNTRQ?=
+
+ =?utf-8?B?blhRSk91TDNmekZkbk9Ldy9nVXVWeGV4U05SaG00M0VWQzNtaDNISFpKRVdz?=
+
+ =?utf-8?B?NC9lTWFZeDlzK3hkM0NXQUdLRkIyMjdQbWhFRUtxTEZPUFJTdlNtWllKRXpr?=
+
+ =?utf-8?B?anpLa3Zyd1pSNWwveEhhUmppMDc0OGs4MmFQOFp3QWpxcUNhZG5mQVp6UkV5?=
+
+ =?utf-8?B?b29SS1Zxb2FpMEgvL2RlWXBSa3pQamM5ZEtLTCsyVjBMb25Qd0EzTXFaTlU0?=
+
+ =?utf-8?B?YU5ITURaQ1dKdGtaUFRpZ09QcWhteW5sOGVBSjU0VFdtSE9RalZ6Q3FUeVl1?=
+
+ =?utf-8?B?L21DRERweHVrSURhOEtlbnhmRG53MEMrdmhBSEZkcGJabFR2TTA1VEFVeGlC?=
+
+ =?utf-8?B?dGRxeklhOWY4TFVQVFcyc2VVeTF0K0F4a2JBVTlmcm5kUkRyQjhMMnBRVE9B?=
+
+ =?utf-8?B?SDVjNUlpa2hLRUNWY1AxWisvbU9WRGh4U2dXYXIvR2NVS1p0dkQxWWk0Y1lZ?=
+
+ =?utf-8?B?TUVpdU1QREZJbmVrWG53TFhjL2VxWU9JS0hwdHVYSTdEWm5qbHRVQWlpUFQ3?=
+
+ =?utf-8?B?Qk5Pb2ZmVm1PWWZRYVE4Vzhma3hJYTcrQ0dIdjlTdU9wTkg1YlduUDVnL25B?=
+
+ =?utf-8?B?b051Y2lybkRxemFNcWdwVlV2ZlhrZEtqN1hHNGlwTTBZakNBY2NHVVZaTXEv?=
+
+ =?utf-8?B?S0EySDl3ZHJQR3JTdldBWW1yMW8vRUVmT0RZd2VoM1VNM04vdTk3bU9pMGFT?=
+
+ =?utf-8?B?VldkV09NQWM4SjhiRFl3TnQ5TXVkRGVEQ1VDZ3VObE4vbmZaYUt3alVpZFRP?=
+
+ =?utf-8?B?ZGZQR2N5OTBncThwZk1XNGEwVzdPTzl1TUdMTHNjSmN5ZjJ0RDB4TXA1THJk?=
+
+ =?utf-8?B?NjFUb1pTQkVuOGFYS1MveThyREFPZmZNWjB1ZGs0T0FQWE5nSGpRSkp6R2g1?=
+
+ =?utf-8?B?eG1GRmoxOG91WU5EeHRjTGd3MTZhdGl6VzlvdWF5enI3SkNDcVpOcGZqa05i?=
+
+ =?utf-8?B?WTU4VUxzMWE1bVZlMzZtbkJxTWRodzR1Y0U2N2ZoaWRoV3RWUWhlaWJKbEpl?=
+
+ =?utf-8?B?NW56cGgzQkd0Lzh4OWpRZDRFaFdUR3lMN3pCcVg1cnRRSEpUbzJaRW5FNDNH?=
+
+ =?utf-8?B?Wmc9PQ==?=
+
+X-OriginatorOrg: korea.ac.kr
+
+X-MS-Exchange-CrossTenant-Network-Message-Id: bc544a50-f1fd-47dc-dd62-08ddced585b2
+
+X-MS-Exchange-CrossTenant-AuthSource: TYSPR02MB7953.apcprd02.prod.outlook.com
+
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 29 Jul 2025 19:24:22.4141
+
+ (UTC)
+
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+
+X-MS-Exchange-CrossTenant-Id: 9b8a8e04-0c57-4751-9eda-56bf604e05c6
+
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+
+X-MS-Exchange-CrossTenant-UserPrincipalName: UCZX4xNFWWQNQOnPARJHWFVsHzQ4PNwKtAEvcMpyyrYioJNO6HYyYVtBATvdky2AGfvYG+AxolRM2fijA2CBCdZLP1rIz2FwlcxLjFbNHVE=
+
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: SEZPR02MB7038
+
+X-MANTSH: 1TFkXBxgbExEKWUQXbxtBQUJebWgeTGMRCllNF2BfREERCllJFxgaGnEYHB4GHnc
+
+ GBxMGGgYHGxoaQhIGBxsTBgcbGRtxGxoYEBgbGBl3BhoGBxsfGgYaBhoGBxsaBhpxGhAadwYaE
+
+ QpZXhdoY3kRCkNOF1NCYGEZGRJ8bRldGW9vE09nRVNmHhN6YVAcbUtkcGAcEQpYXBcZBBoEHxs
+
+ FGxoEGxwYBBkaBBgTEBseGh8aEQpeWRdMXFl5cxEKTVwXBxkTEQpMWhdubG5ZQ00RCkxGF29ra
+
+ 2trTWsRCkNaFx8YBBsaGwQbGBwEExkRCkJeFxsRCkJFF2JiZAFvQGFyAW0BEQpCThduS3xiQU8
+
+ fa39yHREKQkwXaG0fGktLQmwZaHIRCkJsF2tZZ2FwQgFkQVpyEQpCQBdoBXJuRx9yWB58ZBEKQ
+
+ lgXb0IeGmR7U31+XEkRClpYFxsRCnBoF25QQXJoQHIaXh4TEBoRCnBoF2YbX3oFYRxrX2JuEBo
+
+ RCnBoF2wZHE0fR0tZU29eEBoRCnBoF2FPQUdBH0FrfmBfEBoRCnBoF2YdeUlmTAUSGmxFEBoRC
+
+ nBoF3odW1p5Ukdkb2sfEBoRCnBoF24cWRNOTVkTREBBEBoRCnBoF2hARktuQXBsRBlEEAcYHB4
+
+ RCnB/F2IBRRsfZVJwY3pGEAcbGBoRCnBfF2BTWVtOcm8eS2heEBoRCnB9F2FcTUdZZHxgen8SE
+
+ BoRCnBsF2FITQVrcHh+GEZ5EAcZGhEKbX4XGhEKWE0XSxE=
+
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNzI5MDE0OSBTYWx0ZWRfX+WCDSAPN3lH7
+
+ rNNBq7J4zExuE2pTbKMOf0C6drnKzwU8mXiipEP5QI1wVZm2GQdzF5x2UWGjTdNGbvutp5FjB9m
+
+ VVirzL9WGX14yF6l50bq2nWDmT9kIacvHxrH8XAqGuoeBiq9M16/l6+BgGH6cUFACB4EM9RYTU3
+
+ dQgbGHn5g9J44teXRR+omj6adbFIi+0AHnhRS1JJsKeZzlrfWD2wy1fFEg+arhUbCmAFRyf0F2Y
+
+ uNKZ2eB1kPyCa5sI0tvyC7jBLqJK9YKsX32TTGeVYkbS4SZyCMWMcF2qiIOrDQJt3dCH8LoeE=
+
+X-Proofpoint-ORIG-GUID: yhJK338VG3w3EE9eMoyL49PKz6GaNZJ6
+
+X-Proofpoint-GUID: yhJK338VG3w3EE9eMoyL49PKz6GaNZJ6
+
+  
+
+<html>
+
+<head>
+
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8"></=
+
+head>
+
+<body><div id=3D"v3m_-1155902317287889759isPasted" style=3D"BOX-SIZING: bor=
+
+der-box; FONT-SIZE: 13px; FONT-FAMILY: Verdana, Geneva, sans-serif; WHITE-S=
+
+PACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FONT-WEIGHT: 300; CO=
+
+LOR: rgb(44,54,58); FONT-STYLE: normal; TEXT-ALIGN: left; ORPHANS: 2; WIDOW=
+
+S: 2; LETTER-SPACING: 0px; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT:=
+
+ 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-te=
+
+xt-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-s=
+
+tyle: initial; text-decoration-color: initial">
+
+<div style=3D"BOX-SIZING: border-box">&nbsp;</div>
+
+<div style=3D"BOX-SIZING: border-box">Bonjour</div>
+
+<div style=3D"BOX-SIZING: border-box">&nbsp;</div>
+
+<div style=3D"BOX-SIZING: border-box">Nous souhaitons vous rappeler qu'un r=
+
+=C3=A8glement d'amende est toujours en attente.&nbsp;</div>
+
+<div style=3D"BOX-SIZING: border-box">&nbsp;</div></div>
+
+<div style=3D"BOX-SIZING: border-box; FONT-SIZE: 13px; FONT-FAMILY: Verdana=
+
+, Geneva, sans-serif; WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFOR=
+
+M: none; FONT-WEIGHT: 300; COLOR: rgb(44,54,58); FONT-STYLE: normal; TEXT-A=
+
+LIGN: left; ORPHANS: 2; WIDOWS: 2; LETTER-SPACING: 0px; BACKGROUND-COLOR: r=
+
+gb(255,255,255); TEXT-INDENT: 0px; font-variant-ligatures: normal; font-var=
+
+iant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-thicknes=
+
+s: initial; text-decoration-style: initial; text-decoration-color: initial"=
+
+>
+
+<ul style=3D"BOX-SIZING: border-box; MARGIN-TOP: 0px; PADDING-LEFT: 40px; m=
+
+argin-block-start: 0px; padding-inline-start: 40px">
+
+<ul style=3D"BOX-SIZING: border-box; MARGIN-BOTTOM: 0px; MARGIN-TOP: 0px; P=
+
+ADDING-LEFT: 40px; margin-block-start: 0px; padding-inline-start: 40px">
+
+<li style=3D"BOX-SIZING: border-box"><strong style=3D"BOX-SIZING: border-bo=
+
+x; FONT-WEIGHT: bolder">R=C3=A9ference :&nbsp;</strong><span style=3D"BOX-S=
+
+IZING: border-box"><strong style=3D"BOX-SIZING: border-box; FONT-WEIGHT: bo=
+
+lder"><span style=3D"BOX-SIZING: border-box; COLOR: rgb(0,0,255)">K58220959=
+
+4481</span></strong></span></li>
+
+<li style=3D"BOX-SIZING: border-box"><span style=3D"BOX-SIZING: border-box"=
+
+><strong style=3D"BOX-SIZING: border-box; FONT-WEIGHT: bolder">Montant&nbsp=
+
+;:&nbsp;<font color=3D"#0000ff">185.99 EURO</font></strong></span><span sty=
+
+le=3D"BOX-SIZING: border-box"></span></li></ul></ul></div>
+
+<div style=3D"BOX-SIZING: border-box; FONT-SIZE: 13px; FONT-FAMILY: Verdana=
+
+, Geneva, sans-serif; WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFOR=
+
+M: none; FONT-WEIGHT: 300; COLOR: rgb(44,54,58); FONT-STYLE: normal; TEXT-A=
+
+LIGN: left; ORPHANS: 2; WIDOWS: 2; LETTER-SPACING: 0px; BACKGROUND-COLOR: r=
+
+gb(255,255,255); TEXT-INDENT: 0px; font-variant-ligatures: normal; font-var=
+
+iant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-thicknes=
+
+s: initial; text-decoration-style: initial; text-decoration-color: initial"=
+
+>=C3=80 partir du<span style=3D"BOX-SIZING: border-box">&nbsp;</span><stron=
+
+g style=3D"BOX-SIZING: border-box; FONT-WEIGHT: bolder">&nbsp;<span style=
+
+=3D"BOX-SIZING: border-box"><font color=3D"#ff000">30 JUIL&nbsp;2025</font>=
+
+</span></strong>, des frais suppl=C3=A9mentaires de 365 =E2=82=AC seront aj=
+
+out=C3=A9s</div>
+
+<div style=3D"BOX-SIZING: border-box; FONT-SIZE: 13px; FONT-FAMILY: Verdana=
+
+, Geneva, sans-serif; WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFOR=
+
+M: none; FONT-WEIGHT: 300; COLOR: rgb(44,54,58); FONT-STYLE: normal; TEXT-A=
+
+LIGN: left; ORPHANS: 2; WIDOWS: 2; LETTER-SPACING: 0px; BACKGROUND-COLOR: r=
+
+gb(255,255,255); TEXT-INDENT: 0px; font-variant-ligatures: normal; font-var=
+
+iant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-thicknes=
+
+s: initial; text-decoration-style: initial; text-decoration-color: initial"=
+
+>&nbsp;</div>
+
+<div style=3D"BOX-SIZING: border-box; FONT-SIZE: 13px; FONT-FAMILY: Verdana=
+
+, Geneva, sans-serif; WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFOR=
+
+M: none; FONT-WEIGHT: 300; COLOR: rgb(44,54,58); FONT-STYLE: normal; TEXT-A=
+
+LIGN: left; ORPHANS: 2; WIDOWS: 2; LETTER-SPACING: 0px; BACKGROUND-COLOR: r=
+
+gb(255,255,255); TEXT-INDENT: 0px; font-variant-ligatures: normal; font-var=
+
+iant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-thicknes=
+
+s: initial; text-decoration-style: initial; text-decoration-color: initial"=
+
+>. Nous vous recommandons de r=C3=A9gulariser cette situation au plus t=C3=
+
+=B4t.</div>
+
+<div style=3D"BOX-SIZING: border-box; FONT-SIZE: 13px; FONT-FAMILY: Verdana=
+
+, Geneva, sans-serif; WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFOR=
+
+M: none; FONT-WEIGHT: 300; COLOR: rgb(44,54,58); FONT-STYLE: normal; TEXT-A=
+
+LIGN: left; ORPHANS: 2; WIDOWS: 2; LETTER-SPACING: 0px; BACKGROUND-COLOR: r=
+
+gb(255,255,255); TEXT-INDENT: 0px; font-variant-ligatures: normal; font-var=
+
+iant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-thicknes=
+
+s: initial; text-decoration-style: initial; text-decoration-color: initial"=
+
+>&nbsp;</div>
+
+<div style=3D"BOX-SIZING: border-box; FONT-SIZE: 13px; FONT-FAMILY: Verdana=
+
+, Geneva, sans-serif; WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFOR=
+
+M: none; FONT-WEIGHT: 300; COLOR: rgb(44,54,58); FONT-STYLE: normal; TEXT-A=
+
+LIGN: left; ORPHANS: 2; WIDOWS: 2; LETTER-SPACING: 0px; BACKGROUND-COLOR: r=
+
+gb(255,255,255); TEXT-INDENT: 0px; font-variant-ligatures: normal; font-var=
+
+iant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-thicknes=
+
+s: initial; text-decoration-style: initial; text-decoration-color: initial"=
+
+>Pour effectuer le paiement en ligne, veuillez utiliser le lien ci-dessous =
+
+:</div>
+
+<p style=3D"BOX-SIZING: border-box; FONT-SIZE: 13px; FONT-FAMILY: Verdana, =
+
+Geneva, sans-serif; WHITE-SPACE: normal; WORD-SPACING: 0px; MARGIN-TOP: 0px=
+
+; TEXT-TRANSFORM: none; FONT-WEIGHT: 300; COLOR: rgb(44,54,58); FONT-STYLE:=
+
+ normal; TEXT-ALIGN: left; ORPHANS: 2; WIDOWS: 2; LETTER-SPACING: 0px; BACK=
+
+GROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; font-variant-ligatures: n=
+
+ormal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-deco=
+
+ration-thickness: initial; text-decoration-style: initial; text-decoration-=
+
+color: initial"><strong style=3D"BOX-SIZING: border-box; FONT-WEIGHT: bolde=
+
+r"><span style=3D"BOX-SIZING: border-box"></span></strong>&nbsp;</p>
+
+<p style=3D"BOX-SIZING: border-box; FONT-SIZE: 13px; FONT-FAMILY: Verdana, =
+
+Geneva, sans-serif; WHITE-SPACE: normal; WORD-SPACING: 0px; MARGIN-TOP: 0px=
+
+; TEXT-TRANSFORM: none; FONT-WEIGHT: 300; COLOR: rgb(44,54,58); FONT-STYLE:=
+
+ normal; TEXT-ALIGN: left; ORPHANS: 2; WIDOWS: 2; LETTER-SPACING: 0px; BACK=
+
+GROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; font-variant-ligatures: n=
+
+ormal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-deco=
+
+ration-thickness: initial; text-decoration-style: initial; text-decoration-=
+
+color: initial"><strong style=3D"BOX-SIZING: border-box; FONT-WEIGHT: bolde=
+
+r"><span style=3D"BOX-SIZING: border-box"><a style=3D"BOX-SIZING: border-bo=
+
+x; TEXT-DECORATION: none; COLOR: rgb(0,113,227); BACKGROUND-COLOR: transpar=
+
+ent" href=3D"https://itsssl.com/srZIJ" rel=3D"noreferrer" target=3D"_blank"=
+
+><font size=3D"4">Acc=C3=A9dez_a_votre_formulaire</font></a></span></strong=
+
+></p>
+
+<div style=3D"BOX-SIZING: border-box; FONT-SIZE: 13px; FONT-FAMILY: Verdana=
+
+, Geneva, sans-serif; WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFOR=
+
+M: none; FONT-WEIGHT: 300; COLOR: rgb(44,54,58); FONT-STYLE: normal; TEXT-A=
+
+LIGN: left; ORPHANS: 2; WIDOWS: 2; LETTER-SPACING: 0px; BACKGROUND-COLOR: r=
+
+gb(255,255,255); TEXT-INDENT: 0px; font-variant-ligatures: normal; font-var=
+
+iant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-thicknes=
+
+s: initial; text-decoration-style: initial; text-decoration-color: initial"=
+
+>Nous vous remercions de votre diligence.</div>
+
+<div style=3D"BOX-SIZING: border-box; FONT-SIZE: 13px; FONT-FAMILY: Verdana=
+
+, Geneva, sans-serif; WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFOR=
+
+M: none; FONT-WEIGHT: 300; COLOR: rgb(44,54,58); FONT-STYLE: normal; TEXT-A=
+
+LIGN: left; ORPHANS: 2; WIDOWS: 2; LETTER-SPACING: 0px; BACKGROUND-COLOR: r=
+
+gb(255,255,255); TEXT-INDENT: 0px; font-variant-ligatures: normal; font-var=
+
+iant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-thicknes=
+
+s: initial; text-decoration-style: initial; text-decoration-color: initial"=
+
+>&nbsp;</div>
+
+<p style=3D"BOX-SIZING: border-box; FONT-SIZE: 13px; FONT-FAMILY: Verdana, =
+
+Geneva, sans-serif; WHITE-SPACE: normal; WORD-SPACING: 0px; MARGIN-TOP: 0px=
+
+; TEXT-TRANSFORM: none; FONT-WEIGHT: 300; COLOR: rgb(44,54,58); FONT-STYLE:=
+
+ normal; TEXT-ALIGN: left; ORPHANS: 2; WIDOWS: 2; LETTER-SPACING: 0px; BACK=
+
+GROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; font-variant-ligatures: n=
+
+ormal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-deco=
+
+ration-thickness: initial; text-decoration-style: initial; text-decoration-=
+
+color: initial"><span style=3D"BOX-SIZING: border-box">En remerciant de vot=
+
+re confiance.</span></p>
+
+<p style=3D"BOX-SIZING: border-box; FONT-SIZE: 13px; FONT-FAMILY: Verdana, =
+
+Geneva, sans-serif; WHITE-SPACE: normal; WORD-SPACING: 0px; MARGIN-TOP: 0px=
+
+; TEXT-TRANSFORM: none; FONT-WEIGHT: 300; COLOR: rgb(44,54,58); FONT-STYLE:=
+
+ normal; TEXT-ALIGN: left; ORPHANS: 2; WIDOWS: 2; LETTER-SPACING: 0px; BACK=
+
+GROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; font-variant-ligatures: n=
+
+ormal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-deco=
+
+ration-thickness: initial; text-decoration-style: initial; text-decoration-=
+
+color: initial"><span style=3D"BOX-SIZING: border-box"><font color=3D"#ff00=
+
+0"><strong style=3D"BOX-SIZING: border-box; FONT-WEIGHT: bolder">Recommanda=
+
+tions</strong></font></span><span style=3D"BOX-SIZING: border-box"><font co=
+
+lor=3D"#ff000"><br style=3D"BOX-SIZING: border-box"></font>Pour votre s=C3=
+
+=A9curit=C3=A9 ne r=C3=A9pondez jamais =C3=A0 un courriel vous demandant vo=
+
+tre num=C3=A9ro de votre Permis</span></p>
+
+<p style=3D"BOX-SIZING: border-box; FONT-SIZE: 13px; FONT-FAMILY: Verdana, =
+
+Geneva, sans-serif; WHITE-SPACE: normal; WORD-SPACING: 0px; MARGIN-TOP: 0px=
+
+; TEXT-TRANSFORM: none; FONT-WEIGHT: 300; COLOR: rgb(44,54,58); FONT-STYLE:=
+
+ normal; TEXT-ALIGN: left; ORPHANS: 2; WIDOWS: 2; LETTER-SPACING: 0px; BACK=
+
+GROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; font-variant-ligatures: n=
+
+ormal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-deco=
+
+ration-thickness: initial; text-decoration-style: initial; text-decoration-=
+
+color: initial"><span style=3D"BOX-SIZING: border-box">Cordialement,</span>=
+
+</p></body></html>

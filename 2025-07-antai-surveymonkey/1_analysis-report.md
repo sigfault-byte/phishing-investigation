@@ -1,5 +1,5 @@
 
-# Analysis of a phishing mail from the 2025-07-25. 
+# ANTAI Phishing Report — Campaign 1: "Mail - survey Monkey - -> Compromised Worpress" 
 
 ### Impersonating **ANTAI** - **Agence National de Traitement Automatique des Infractions**.
 
@@ -290,12 +290,16 @@ Interesting:
 ```
 > using some magic openssl I gather the tls cert and the details, but not much can be made from it. I wonder if authorities can trace the telegram bot
 
-Cert Dump `openssl s_client -connect 102.165.14.4:5001 </dev/null \
+Cert Dump 
+ 
+```bash
+openssl s_client -connect 102.165.14.4:5001 </dev/null \
   | sed -n '/-----BEGIN CERTIFICATE-----/,/-----END CERTIFICATE-----/p' \
   > telegrambotcheck.crt`
   
   -> [Cert](evidence/telegrambotcheck.crt) 
-  > Read with `openssl x509 -in telegrambotcheck.crt -noout -text`
+  > Read with `openssl x509 -in telegrambotcheck.crt -noout -text
+```
 
 Interesting interaction:
 
@@ -344,9 +348,8 @@ They gather user data, then ask for card details.
 
 They do not validate inputs, Card details are not validated.  
 
-On the previous website, when trying to send random post to the card detail, I got IP banned after the first post.
+On previous tests, when trying to send random post to the card detail, I got IP banned after the first post.
 
-I am unsure about the post endpoint regarding the form submission.
 
 ---
-# Reported to [cert-fr@ssi.gouv.fr](mailto:cert-fr@ssi.gouv.fr) with raw email, and findings. - 2025-07-29 - 
+# Reported to **cert-fr** with raw email, and findings. - 2025-07-29 - 

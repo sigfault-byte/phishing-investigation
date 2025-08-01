@@ -1,0 +1,68 @@
+# Nmap 7.97 scan initiated Thu Jul 31 19:33:41 2025 as: nmap -p 443 --script ssl-cert,http-headers,http-title -T4 -Pn -v -oN quick-followup.txt 85.13.164.177
+Nmap scan report for dd48424.kasserver.com (85.13.164.177)
+Host is up (0.064s latency).
+
+PORT    STATE SERVICE
+443/tcp open  https
+| ssl-cert: Subject: commonName=*.kasserver.com
+| Subject Alternative Name: DNS:*.kasserver.com, DNS:kasserver.com
+| Issuer: commonName=Sectigo RSA Domain Validation Secure Server CA/organizationName=Sectigo Limited/stateOrProvinceName=Greater Manchester/countryName=GB/localityName=Salford
+| Public Key type: rsa
+| Public Key bits: 2048
+| Signature Algorithm: sha256WithRSAEncryption
+| Not valid before: 2024-12-20T00:00:00
+| Not valid after:  2026-01-20T23:59:59
+| MD5:     a794 57e7 3b2b ce3b 128b 2008 f652 84f2
+| SHA-1:   f3ef a82c cfed b811 5993 73c1 3e55 3061 66ec dacb
+| SHA-256: 6fd2 d3d2 1f7b 598b 97f1 0fc3 059a 2a57 79cc 655b d540 2db8 e345 8b3e 099d 95fc
+| -----BEGIN CERTIFICATE-----
+| MIIGNjCCBR6gAwIBAgIQbrVaO6F2eIdbvOwBjtXw+zANBgkqhkiG9w0BAQsFADCB
+| jzELMAkGA1UEBhMCR0IxGzAZBgNVBAgTEkdyZWF0ZXIgTWFuY2hlc3RlcjEQMA4G
+| A1UEBxMHU2FsZm9yZDEYMBYGA1UEChMPU2VjdGlnbyBMaW1pdGVkMTcwNQYDVQQD
+| Ey5TZWN0aWdvIFJTQSBEb21haW4gVmFsaWRhdGlvbiBTZWN1cmUgU2VydmVyIENB
+| MB4XDTI0MTIyMDAwMDAwMFoXDTI2MDEyMDIzNTk1OVowGjEYMBYGA1UEAwwPKi5r
+| YXNzZXJ2ZXIuY29tMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAucQ3
+| nHxI9CyL6xgUg475aCXAXAh261V9t0zpq5rRt2v8um6BHHip9Lvofu66I3P85JU5
+| uR2RawD+zWtrGsZHNiVl7jPgTS+Sgbe8vt7fisTHfQBRAZzGyGnSz98B4+u83Tzg
+| Ab8336lif8Ior4AiU4WghFWm83IfUsDed9Gmn3nJkufUpT3W6pOlQpKEDFdZzmsf
+| smMM6sYdY9riTdcwPLwGFuDmuimWel5AHvZ8Zxf737llPRJ4okA/GwraOrmphlWe
+| uP5ISC6pY02GMBitYr2bV8rfDJFt+6s96I8si2Wd6wk9Z6c7q4B5YDYF0C6gn0rr
+| UXJvg1PJKkFX+LjIIQIDAQABo4IDADCCAvwwHwYDVR0jBBgwFoAUjYxexFStiuF3
+| 6Zv5mwXhuAGNYeEwHQYDVR0OBBYEFCzoJJG+cOYJP+Qvcz4rBc8/nDYgMA4GA1Ud
+| DwEB/wQEAwIFoDAMBgNVHRMBAf8EAjAAMB0GA1UdJQQWMBQGCCsGAQUFBwMBBggr
+| BgEFBQcDAjBJBgNVHSAEQjBAMDQGCysGAQQBsjEBAgIHMCUwIwYIKwYBBQUHAgEW
+| F2h0dHBzOi8vc2VjdGlnby5jb20vQ1BTMAgGBmeBDAECATCBhAYIKwYBBQUHAQEE
+| eDB2ME8GCCsGAQUFBzAChkNodHRwOi8vY3J0LnNlY3RpZ28uY29tL1NlY3RpZ29S
+| U0FEb21haW5WYWxpZGF0aW9uU2VjdXJlU2VydmVyQ0EuY3J0MCMGCCsGAQUFBzAB
+| hhdodHRwOi8vb2NzcC5zZWN0aWdvLmNvbTApBgNVHREEIjAggg8qLmthc3NlcnZl
+| ci5jb22CDWthc3NlcnZlci5jb20wggF+BgorBgEEAdZ5AgQCBIIBbgSCAWoBaAB2
+| AJaXZL9VWJet90OHaDcIQnfp8DrV9qTzNm5GpD8PyqnGAAABk+MW5D8AAAQDAEcw
+| RQIhAKyL7SrUtum/azqEkY+O9/qok1VN8yYQgK7zyYytEEmnAiAJInAADG+FZEQN
+| O8H26Guk4gxnwHQHNjvfol8KB9pSjQB2ABmG1Mcoqm/+ugNveCpNAZGqzi1yMQ+u
+| zl1wQS0lTMfUAAABk+MW4/IAAAQDAEcwRQIgT206ImIoz7lQCux3mZzkwNCxlzNB
+| nyAlQbUjl5deXbwCIQCyW8PWPrW1U+0Mazs3q9HY+h7fbNFhR/SgFgs6s6kEPwB2
+| AMs49xWJfIShRF9bwd37yW7ymlnNRwppBYWwyxTDFFjnAAABk+MW5CQAAAQDAEcw
+| RQIhAOqPZ5UjhOQOCw6p56547mchXc7aFttKbSC/OPirkU6+AiA6F+XmQkHhF+oa
+| xxLSXtm6tBpmw/dKCGP6aO3d/qtjRTANBgkqhkiG9w0BAQsFAAOCAQEAQBPYPkpW
+| klsxuhILpX+XElg8t2z/DD9tBdUbAMcDGviCVsHTaCyLVRB52xgbqOzIVjV9QjDD
+| ZPi3rD3iOTz/OLm7+frqrWVDKBXQvxoseIMDJ/npkjUMpyLISoS3jEwz8HAuenVw
+| hMiJ6D8yiM8N4poMzZvjWkSDOe3tkdxjdPFfbn2gPJr6myiEgqU8hQ7+ypS6NGrb
+| LNy6k95m6ln7/xkElCZMu5Kki9VR9b8B7p2/9lDwHzbjMpjH+xrPcAtovOf1/zyj
+| 1bfU+Zo3abymEG2nHu4ActDKqBu2hPICYvVMINcwNpnUCT7rTQWxK2a9JgQDzQWX
+| hQ5OWmMWKpyxHA==
+|_-----END CERTIFICATE-----
+|_http-title: 503 Service Temporarily Unavailable
+| http-headers: 
+|   Date: Thu, 31 Jul 2025 18:33:42 GMT
+|   Server: Apache
+|   Retry-After: 3600
+|   Upgrade: h2,h2c
+|   Connection: Upgrade, close
+|   Vary: User-Agent
+|   Transfer-Encoding: chunked
+|   Content-Type: text/html
+|   
+|_  (Request type: GET)
+
+Read data files from: /opt/homebrew/bin/../share/nmap
+# Nmap done at Thu Jul 31 19:33:42 2025 -- 1 IP address (1 host up) scanned in 1.29 seconds
