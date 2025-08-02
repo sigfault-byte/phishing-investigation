@@ -1,0 +1,4583 @@
+Return-path: <0986763rat9378@intnet.mu>
+Original-recipient: rfc822;REDACTED@MAIL.COM
+Received: from p00-icloudmta-smtpin-us-west-3a-100-percent-15 by p163-mailgateway-smtp-5d6c6b7499-ltwvq (mailgateway 2528B40)
+	with SMTP id ac320af4-da27-448e-a0a9-c85f6164b42d 
+	for <REDACTED@MAIL.COM>; Fri, 1 Aug 2025 15:52:43 GMT
+X-Apple-MoveToFolder: INBOX 
+X-Apple-Action: MOVE_TO_FOLDER/INBOX
+X-Apple-UUID: ac320af4-da27-448e-a0a9-c85f6164b42d
+Received: from iron1.emtelworld.com (iron1.emtelworld.com [196.192.81.95])
+	by p00-icloudmta-smtpin-us-west-3a-100-percent-15 (Postfix) with ESMTP id CDBC8C00133;
+	Fri,  1 Aug 2025 15:51:32 +0000 (UTC)
+X-ICL-Info: GAtbRVYEBFBFSlVFSgQEUFUKE0oWX1gHVQoPB0UBD1RbSF9FVggHTExMRhIcDQZbTU9RQUtCVxZMSlFPOFlYFhscElkVRRYEEUQPGQxeUxZbFBNXClMLCAAKEh4WHlQQHB0JAjhZVQ4aDAJZG19bTgIcCBMBUVoLFhAHBRFGdgsWFQkCHB5VDRhVFBYBUVhMGEtVRkpwXwEZFhMTVlNZD1kSFB4VBgAiHBoKGA1UGAEaFEoBGVlaDhQXEgM4WVUOGgwCWRtfW04TEBQaEV4YDxQaAzcRU1oNAB1IFBddGhEMFRAeHR5eBxccFANJcF8BGRYTE1ZTWQ9ZEBUWFlVEBzUQBRsXRVJMFhYLWxpCQwwaVwUWCkBfIhwaChgNVBgBGhRKGxdXVwxbDxMeOFlVDhoMAlkbX1tOFBUDDxFDGAAQCxIFGV5SUEVJVTcRU1oNAB1IFBddGgAaHQcFDFJTEBsYFBM4WVUOGgwCWRtfW04ZEAoeGV5QBwMLDxIKcF8BGRYTE1ZTWQ9ZFAMfHFkYABoLCB44WVUOGgwCWRtfW04WEQMEC1UYDxAVDxkcUXYLFhUJAhweVQ0YVQoWHURfABARDxIKcF8BGRYTE1ZTWQ9ZCQ8SCkJTAQccAQIMcF8BGRYTE1ZTWQ9ZGBMQDUNCCxtXBxsdSFcMEQsDNxFTWg0AHUgUF10aDBQXBwQQX0IDQkomHhtcWRcRVwUYFRxFAxsYHA0XRUwDNRAFGxdFUkwWFgtbG1hECwYNDxkdQ1cXARADBThZVQ4aDAJZG19bThQVAw8ZXlIQEFcCEhtRWxIaDCYeG1xZFxFXBRgVHEUWEAkOFhZVGAAaDAwCOFlVDhoMAlkbX1tOGBwKHgtDVwcGGgkCCkJZFzUQBRsXRVJMFhYLWx8eWgMACw8ZHXBfARkWExNWU1kPWRQPFBNRUw4YGBQDEV5FUkw5DxQUX0MGWxoJGlRXQwcbFw8UFVFfDBo5DxQUX0MGWxoJGlRWWg0HGAIeF0R2CxYVCQIcHlUNGFUUEhVJGBQUFwUfHUJfIhwaChgNVBgBGhRKGhlFUgAaEBUEHV5ZFjUQBRsXRVJMFhYLWxRFVQcYGBQeHQEPWkM5DxQUX0MGWxoJGlRAGAAAFQkCCHBfARkWExNWU1kPWR8HFRFVWBAaDAESHXBfARkWExNWU1kPWRQPGhFTWldMOQ8UFF9DBlsaCRpUUVgFDB0TQ0xwXwEZFhMTVlNZD1kfBxURVVgRFBsUHhZRdgsWFQkCHB5VDRhVFQMdSVMQBg0DBxBRWAsQOQ8UFF9DBlsaCRpUXFkLFlcLFgpEXwxDQCYeG1xZFxFXBRgVHFIDAxACGxFdWQMbOQ8UFF9DBlsaCRpUV0QHEhYUDlZaQwMbOQ8UFF9DBlsaCRpUXlcGEB4DFBBVQBAQDB43EVNaDQAdSBQXXRoAGBgIGBYAAFJEOQ8UFF9DBlsaCRpUXFcRBklQNxFTWg0AHUgUF10aERQUDwUZHgVaTUomHhtcWRcRVwUYFRxXDBscFRgIWF8HFxYTBg1ZUyIcGgoYDVQYARoURh8dXFlfHAsJGUkeUw8BHAoAF0JaBlsaCRpYQEIQSBAUGBYBGAcYDQMbD19EDhFXBRgVEFIGSAwIHBZfQQxVFA8TRQwPBExBVE5cA1pSHEsQNwtdQhJbHAsDHVwYARoUWA==
+X-ICL-Score: 2.42203322422
+Authentication-Results: bimi.icloud.com; bimi=skipped reason="insufficient dmarc"
+X-ARC-Info: policy=fail; arc=none
+Authentication-Results: arc.icloud.com; arc=none
+Authentication-Results: dmarc.icloud.com; dmarc=fail header.from=intnet.mu
+X-DMARC-Policy: v=DMARC1; p=none; sp=quarantine; ruf=mailto:mailauth-reports@myt.mu; rua=mailto:mailauth-reports@myt.mu;
+X-DMARC-Info: pass=fail; dmarc-policy=none; s=r0; d=r0; pdomain=intnet.mu
+Authentication-Results: dkim-verifier.icloud.com; dkim=none
+Authentication-Results: spf.icloud.com; spf=fail (spf.icloud.com: domain of 0986763rat9378@intnet.mu does not designate 196.192.81.95 as permitted sender) smtp.mailfrom=0986763rat9378@intnet.mu
+Received-SPF: fail (spf.icloud.com: domain of 0986763rat9378@intnet.mu does not designate 196.192.81.95 as permitted sender) receiver=spf.icloud.com; client-ip=196.192.81.95; helo=iron1.emtelworld.com; envelope-from=0986763rat9378@intnet.mu
+Message-Id: <9f9829$3l0i2v@smtp.emtel.com>
+IronPort-HdrOrdr: =?us-ascii?q?A9a23=3A/abAf6DE4/MwTJTlHenF55DYdb4zR+YMi2TD?=
+ =?us-ascii?q?tnobdfU7SKKlfqyV88jztiWftN95YhhJpTnqAsS9qB3nmaJI3Q=3D=3D?=
+Received: from unknown (HELO [91.227.41.126]) ([102.160.176.89])
+  by smtp.emtel.com with ESMTP; 01 Aug 2025 19:52:09 +0400
+Content-Type: multipart/alternative; boundary="===============1623731363=="
+MIME-Version: 1.0
+Subject: =?utf-8?q?Mise_=C3=A0_jour_=7C_Nickel=2Eeu_N=C2=B0789546328?=
+To: "compte@nickel.fr" <0986763rat9378@intnet.mu>
+From: "compte-nickel.fr" <0986763rat9378@intnet.mu>
+Date: Fri, 01 Aug 2025 17:42:20 +0200
+X-MANTSH: 1TFkXGxkcEQpZRBdreU1eE0BkBR9cEhEKWU0XZEVETxEKWUkXGBoacRsaGxoGGBt
+ 3BgccBhoGBx0aQhsYBh0YBgcfGnEbExISEBwYExN3BhoGGgYaBhoGBxsaBhpxGhAadwYaEQpZX
+ hdobnkRCkNOF2ZJZGUef0R5WUZORG9/aVMSWGlZeWVcfmJHe29kE3JGEQpYXBcZBBoEHx4FGxo
+ aBBIYBB4YBBgdEBseGh8aEQpeWRdMXUVOQREKTVwXGx4fEQpMWhdpYGZZREIRCkxGF01pEQpDW
+ hcbExwEGxMYBBIbBBMfEQpCXhcbEQpEWBceHxEKRF4XGBEKQkUXbkVfQwVcQV5NAUcRCkJOF2R
+ GZUBIb08FHmVHEQpCTBdtGxNQYV1kGVNvXhEKQmwXZGtBQFNSWHwYeWgRCkJAF2drQUdiRBIdH
+ HJcEQpaWBcbEQpwZxdmXHBbZGdCSB1gXxAHExoRCnBoF2VbTnhEXU5kGmtJEAcdEhEKcGgXbBp
+ NH0xEXFBPSWkQBx0SEQpwaBdhXFNLARJAQU5YEhAHHRIRCnBoF2xET0lNbWhCRX5EEAcdEhEKc
+ GgXZhxtel1LGgVHU0sQBx0SEQpwaBdsTGNOcB4eWBkbGhAHHRoRCnBoF2JjHl8YQm9fBU5ZEAc
+ dEhEKcGgXaHxfT29/Yx9gT20QBxIfEQpwfxdvbVtMUkJIYkRCZBAHHxoRCnBfF2NiGHt9ZUEYZ
+ ExyEAceEhEKcH0XY2IYe31lQRhkTHIQBx4SEQpwbBdjTh1uTlhlHF9tbxAHHBoRCnBDF2xHXUV
+ tcEJcE2dcEBoRCm1+FxoRClhNF0sR
+X-Proofpoint-ORIG-GUID: LcNO4UnSsldnEUCy8rCsSOvTHmQEN9Xl
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwODAxMDEyMiBTYWx0ZWRfX3yXnwJiWf7hP
+ j/SM6YfEWJHUS2WaCjg+1ad9b0LMf8oOwIFmCvh8i61gqw1ZRtXjJeKqcBsxhlcuvZOpFRn6Sr4
+ c5GgVYK/zeP+zhjqC0ROh15wu4emf2Aor+d9dO3mcqPkDjql0zU6NBzpyEm3utWfj+QgmmNOEv+
+ Mi2Iq1Mt1bMEyiPiNnM+Mf+S95xhT45FYdjurOiNkMcPDLJK3rTN3HNE3NPLrn93b8ybIJGbieA
+ vZHavhzpBAQe1Bq/xDu709pA9HLLY/Av70aEGdej3tP0MyiVsx0iLbijNT225G27+GlREYwZc=
+X-Proofpoint-GUID: LcNO4UnSsldnEUCy8rCsSOvTHmQEN9Xl
+
+You will not see this in a MIME-aware mail reader.
+--===============1623731363==
+Content-Type: text/plain; charset="iso-8859-1"
+MIME-Version: 1.0
+Content-Transfer-Encoding: quoted-printable
+Content-Description: Mail message body
+
+  =
+
+ =
+
+    	   =
+
+ =
+
+   Chers clients,
+ La r-glementation nous impose de v-rifier r-guli-rement la validit- de vot=
+re justificatif d'identit-.
+ Afin d'-viter la suspension de votre compte dans les prochains jours, NICK=
+EL vous invite - vous connecter - votre espace client pour v-rifier votre -=
+ligibilit-.
+ =
+
+ NB : Les comptes   NICKEL  non consult-s seront verrouill-s. Pour finalise=
+r votre demande de mise - jour, nous vous invitons - cliquer sur le lien ci=
+-dessous :
+                        =
+
+ =
+
+   Cliquez ici	 =
+
+    =
+
+ Note : Si cette mise - jour n'est pas compl-t-e, nous serons contraints de=
+ bloquer votre compte ind-finiment, car il est tr-s important pour des rais=
+ons de conformit- l-gale.
+ Nous vous remercions de votre coop-ration dans le cadre de cette proc-dure.
+   - 2025 Nickel. Tous droits r-serv-s.
+     =
+
+  =
+
+     =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+  =
+
+ =
+
+    =
+
+    =
+
+    =
+
+    =
+
+   Mise - jour de nos Conditions G-n-rales et Tarifaires	 =
+
+  =
+
+   =
+
+   Bonjour Kyllian,
+ =
+
+ Nous faisons -voluer nos Conditions G-n-rales et Tarifaires.
+ =
+
+ Vous pouvez retrouver toutes ces -volutions directement sur notre site int=
+ernet ou en cliquant sur le lien ci-dessous ??	 =
+
+   	 =
+
+  Je consulte les Conditions G-n-rales et Tarifaires	 =
+
+  =
+
+   =
+
+   Ces nouvelles conditions seront applicables - partir du 1er octobre proc=
+hain.*
+ =
+
+ Bien s-r, si vous avez le moindre doute, vous pouvez contacter nos conseil=
+lers Nickel, qui restent - votre -coute par t-l-phone au 01 76 49 00 00 du =
+lundi au vendredi de 8h30 - 19h et le samedi de 9h - 18h.
+ =
+
+ *Si vous n-acceptez pas ces modifications de nos Conditions G-n-rales et T=
+arifaires, vous pouvez cl-turer votre compte Nickel sans d-lai et sans frai=
+s dans un d-lai de 2 mois.	 =
+
+   	 =
+
+   	 =
+
+   	 =
+
+   =
+
+    =
+
+    =
+
+   	 - tr-s bient-t,
+ L--quipe Nickel	 =
+
+   	 =
+
+   	 =
+
+   =
+
+    =
+
+   Prot-gez-vous contre la FRAUDE !	 =
+
+   =
+
+   	  	 Ne communiquez JAMAIS vos donn-es bancaires	 =
+
+   =
+
+   =
+
+ Nos conseillers Nickel ne vous demanderont JAMAIS vos informations personn=
+elles telles que : vos identifiants de connexion - votre espace client (ide=
+ntifiant et mot de passe), vos codes de carte Nickel, votre code PIN ou les=
+ codes re-us par SMS, email ou notification.	 =
+
+   	 =
+
+   =
+
+   	  	 V-rifiez l-exp-diteur des e-mails Nickel: attention au phishing !	 =
+
+   =
+
+   =
+
+ Par e-mail, Nickel ne communique avec vous que depuis les adresses mails s=
+e terminant par @compte-nickel.fr, @fr.communications.nickel.eu, ou @nickel=
+.eu. Par ailleurs, nous ne vous enverrons jamais un lien vous amenant - vou=
+s connecter sur votre espace client.	 =
+
+   	 =
+
+   =
+
+   	  	 Payez en toute s-curit-	 =
+
+   =
+
+   =
+
+ Nous vous recommandons d'enregistrer votre carte Nickel uniquement sur des=
+ sites internet de confiance aupr-s desquels vous effectuez habituellement =
+vos achats. Vos coordonn-es de carte Nickel doivent rester dans tous les ca=
+s strictement confidentielles : ne les partagez - personne, pas m-me - vos =
+proches ! Vous -tes responsable de vos donn-es. Pour plus de s-curit-, priv=
+il-giez l-application Nickel pour recevoir vos confirmations de paiement en=
+ temps r-el directement dessus et consulter vos op-rations o- que vous soye=
+z.	 =
+
+   	 =
+
+   =
+
+   	  	 V-rifiez que vous parlez avec un compte Nickel officiel sur les r-s=
+eaux sociaux !	 =
+
+   =
+
+   =
+
+ Sur les r-seaux sociaux, nous sommes pr-sents uniquement sur Instagram, Fa=
+cebook et TikTok. Attention aux faux comptes qui pourraient vous contacter =
+: v-rifiez bien le nom du compte et le badge bleu. Un doute ? Signalez les =
+emails suspects et les faux profils via notre email d-di- : fraudeur@compte=
+-nickel.fr.	 =
+
+   	 =
+
+   =
+
+    	 =
+
+   	 =
+
+  Retrouvez-nous sur les r-seaux sociaux	 =
+
+   =
+
+   	  	 	  	 	  	 	 =
+
+   	 =
+
+  =
+
+  N-attendez pas pour t-l-charger l-application	 =
+
+   =
+
+   	  	 	 =
+
+   	 =
+
+   	 =
+
+   =
+
+   Ceci est un email automatique, n'y r-pondez pas, votre r-ponse ne sera p=
+as re-ue par nos -quipes Financi-re des Paiements Electroniques, Etablissem=
+ent de Paiement agr-- n-16598R, S.A.S. au capital de 770 440 euros - RCS CR=
+ETEIL n?753 886 092, 1, place des Marseillais - 94220 Charenton Le Pont
+ =
+
+ Nickel
+ =
+
+ 1 place des Marseillais , Charenton-le-Pont, 94220	 =
+
+   	 =
+
+   	 =
+
+  =20
+--===============1623731363==
+Content-Type: text/html; charset="iso-8859-1"
+MIME-Version: 1.0
+Content-Transfer-Encoding: quoted-printable
+Content-Description: Mail message body
+
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Diso=
+-8859-1"/>
+	<title></title>
+</head>
+<body>
+<p>&nbsp;</p>
+
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" st=
+yle=3D"color: rgba(0, 0, 0, 0.88); font-size: 17px; letter-spacing: -0.37px=
+; background-color: rgb(255, 255, 255); font-family: Arial, Helvetica, sans=
+-serif; max-width: 700px;" width=3D"100%">
+	<tbody>
+		<tr>
+			<td width=3D"20">&nbsp;</td>
+			<td align=3D"left" colspan=3D"3" style=3D"color: rgb(102, 102, 102); fon=
+t-size: 13px;" valign=3D"top">
+			<p>&nbsp;</p>
+
+			<p><img alt=3D"Simplement Nickel - LOGONEWS" height=3D"110" src=3D"https=
+://logonews.fr/wp-content/uploads/2018/04/Nickel-apre%CC%80s-.jpg" width=3D=
+"249" /></p>
+
+			<div class=3D"content" style=3D"font-size: 17px; letter-spacing: -0.37px=
+; margin-bottom: 20px; color: rgb(51, 51, 51); font-family: Arial, sans-ser=
+if;">
+			<div class=3D"yiv0061253764content" style=3D"background-color: rgb(255, =
+255, 255); letter-spacing: -0.37px; margin-bottom: 20px; outline: none !imp=
+ortant;">
+			<p style=3D"letter-spacing: -0.37px; font-size: 16px; font-family: Helve=
+tica; color: rgb(117, 117, 117); padding: 0px; margin: 10px 0px; line-heigh=
+t: 24px; outline: none !important;">Chers clients,</p>
+
+			<p style=3D"letter-spacing: -0.37px; font-size: 16px; font-family: Helve=
+tica; color: rgb(117, 117, 117); padding: 0px; margin: 10px 0px; line-heigh=
+t: 24px; outline: none !important;">La r&eacute;glementation nous impose de=
+ v&eacute;rifier r&eacute;guli&egrave;rement la validit&eacute; de votre ju=
+stificatif d&#39;identit&eacute;.</p>
+
+			<p style=3D"letter-spacing: -0.37px; font-size: 16px; font-family: Helve=
+tica; color: rgb(117, 117, 117); padding: 0px; margin: 10px 0px; line-heigh=
+t: 24px; outline: none !important;"><span class=3D"yiv0061253764mark5nnpjx6=
+bw" style=3D"border: 0px; font: inherit; margin: 0px; padding: 0px; vertica=
+l-align: baseline; color: inherit; outline: none !important;">A</span>fin d=
+&#39;&eacute;viter la suspension de votre compte dans les prochains&nbsp;<s=
+pan class=3D"yiv0061253764mark4obmvumeh" style=3D"border: 0px; font: inheri=
+t; margin: 0px; padding: 0px; vertical-align: baseline; color: inherit; out=
+line: none !important;">jour</span>s,&nbsp;<span style=3D"border: 0px; font=
+: inherit; margin: 0px; padding: 0px; vertical-align: baseline; color: rgb(=
+255, 140, 0); outline: none !important;">NICKEL&nbsp;</span>vous invite &ag=
+rave; vous connecter &agrave; votre espace client pour v&eacute;rifier votr=
+e &eacute;ligibilit&eacute;.<br style=3D"outline: none !important;" />
+			<br style=3D"outline: none !important;" />
+			<font color=3D"#000000" face=3D"Times New Roman" size=3D"3" style=3D"out=
+line: none !important;">NB : Les comptes</font>&nbsp;&nbsp;&nbsp;<span styl=
+e=3D"border: 0px; font: inherit; margin: 0px; padding: 0px; vertical-align:=
+ baseline; color: rgb(255, 140, 0); outline: none !important;">NICKEL</span=
+>&nbsp;&nbsp;<font color=3D"#000000" face=3D"Times New Roman" size=3D"3" st=
+yle=3D"outline: none !important;">non consult&eacute;s seront verrouill&eac=
+ute;s. Pour finaliser votre demande de&nbsp;<span class=3D"yiv0061253764mar=
+k8iyunqd1q" style=3D"border: 0px; font: inherit; margin: 0px; padding: 0px;=
+ vertical-align: baseline; color: inherit; outline: none !important;">mise<=
+/span>&nbsp;&agrave;&nbsp;<span class=3D"yiv0061253764mark4obmvumeh" style=
+=3D"border: 0px; font: inherit; margin: 0px; padding: 0px; vertical-align: =
+baseline; color: inherit; outline: none !important;">jour</span>, nous vous=
+ invitons &agrave; cliquer sur le lien ci-dessous :</font></p>
+
+			<p style=3D"font-family: &quot;Pro system-ui&quot;, sans-serif; letter-s=
+pacing: -0.37px; outline: none !important;">&nbsp; &nbsp; &nbsp; &nbsp; &nb=
+sp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</p>
+
+			<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"yiv0061=
+253764x_x_mcnButtonContentContainer yiv0061253764x_" style=3D"letter-spacin=
+g: -0.37px; font-stretch: inherit; line-height: inherit; font-family: Verda=
+na; font-size-adjust: inherit; border-width: 1px; border-style: dotted; bor=
+der-color: rgb(211, 211, 211); background-color: rgb(255, 165, 0); outline:=
+ none !important;">
+				<tbody style=3D"outline: none !important;">
+					<tr style=3D"outline: none !important;">
+						<td align=3D"center" class=3D"yiv0061253764x_x_mcnButtonContent" styl=
+e=3D"word-break: normal; font-size: 18px; border-width: 1px; border-style: =
+dotted; border-color: rgb(211, 211, 211); font-family: Helvetica; padding: =
+18px; outline: none !important;" valign=3D"middle"><a class=3D"yiv006125376=
+4x_x_mcnButton" href=3D"https://medsesteamworkspace.myclickfunnels.com/app"=
+ rel=3D"noopener noreferrer" style=3D"color: rgb(255, 255, 255); text-decor=
+ation-line: none; border: 0px; font-style: inherit; font-variant: inherit; =
+font-weight: bold; font-stretch: inherit; font-size: inherit; line-height: =
+18px; font-family: inherit; font-size-adjust: inherit; margin: 0px; padding=
+: 0px; vertical-align: baseline; display: block; letter-spacing: 0px; outli=
+ne: none !important;" title=3D"Cliquez ici">Cliquez ici</a></td>
+					</tr>
+				</tbody>
+			</table>
+
+			<p style=3D"font-family: &quot;Pro system-ui&quot;, sans-serif; letter-s=
+pacing: -0.37px; outline: none !important;">&nbsp;</p>
+
+			<p style=3D"letter-spacing: -0.37px; font-size: 16px; font-family: Helve=
+tica; color: rgb(117, 117, 117); padding: 0px; margin: 10px 0px; line-heigh=
+t: 24px; outline: none !important;"><font color=3D"#000000" face=3D"Times N=
+ew Roman" size=3D"3" style=3D"outline: none !important;">Note : Si cette&nb=
+sp;<span class=3D"yiv0061253764mark8iyunqd1q" style=3D"border: 0px; font: i=
+nherit; margin: 0px; padding: 0px; vertical-align: baseline; color: inherit=
+; outline: none !important;">mise</span>&nbsp;&agrave;&nbsp;<span class=3D"=
+yiv0061253764mark4obmvumeh" style=3D"border: 0px; font: inherit; margin: 0p=
+x; padding: 0px; vertical-align: baseline; color: inherit; outline: none !i=
+mportant;">jour</span>&nbsp;n&#39;est pas compl&eacute;t&eacute;e, nous ser=
+ons contraints de bloquer votre compte ind&eacute;finiment, car il est tr&e=
+grave;s important pour des raisons de conformit&eacute; l&eacute;gale.</fon=
+t></p>
+
+			<p style=3D"letter-spacing: -0.37px; font-size: 16px; font-family: Helve=
+tica; color: rgb(117, 117, 117); padding: 0px; margin: 10px 0px; line-heigh=
+t: 24px; outline: none !important;"><font color=3D"#000000" face=3D"Times N=
+ew Roman" size=3D"3" style=3D"outline: none !important;">Nous vous remercio=
+ns de votre coop&eacute;ration dans le cadre de cette proc&eacute;dure.</fo=
+nt></p>
+			</div>
+
+			<div class=3D"yiv0061253764footer" style=3D"background-color: rgb(255, 2=
+55, 255); letter-spacing: -0.37px; text-align: center; margin-top: 20px; fo=
+nt-size: 14px; color: rgb(119, 119, 119); outline: none !important;">
+			<p style=3D"outline: none !important;">&copy; 2025&nbsp;Nickel. Tous dro=
+its r&eacute;serv&eacute;s.</p>
+			</div>
+			</div>
+
+			<div class=3D"footer" style=3D"letter-spacing: -0.37px; text-align: cent=
+er; margin-top: 20px; font-size: 14px; color: rgb(119, 119, 119); font-fami=
+ly: Arial, sans-serif;">
+			<p>&nbsp;</p>
+			</div>
+
+			<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"=
+ class=3D"yiv5094611557w90pc" width=3D"552">
+				<tbody>
+					<tr>
+						<td valign=3D"top">
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D=
+"0" class=3D"w100pc" style=3D"text-size-adjust: 100%; color: rgba(0, 0, 0, =
+0.88); font-family: &quot;SF Pro Text&quot;, system-ui, sans-serif; font-si=
+ze: 17px; letter-spacing: -0.37px; background-color: rgb(244, 246, 249); wi=
+dth: 600px; margin: 0px auto; border-collapse: collapse !important;" width=
+=3D"600">
+							<tbody>
+								<tr>
+									<td align=3D"center" style=3D"border-collapse: collapse !important=
+; text-size-adjust: 100%;" valign=3D"top">
+									<table align=3D"center" bgcolor=3D"#F4F6F9" border=3D"0" cellpaddi=
+ng=3D"0" cellspacing=3D"0" class=3D"w90pc" style=3D"border-collapse: collap=
+se !important; text-size-adjust: 100%; width: 600px; margin: 0px auto;" wid=
+th=3D"600">
+										<tbody>
+											<tr>
+												<td align=3D"center" style=3D"border-collapse: collapse !import=
+ant; text-size-adjust: 100%; padding-top: 24px;" valign=3D"top">
+												<table align=3D"center" bgcolor=3D"#FFFFFF" border=3D"0" cellpa=
+dding=3D"0" cellspacing=3D"0" class=3D"w100pc border-rad" style=3D"border-c=
+ollapse: collapse !important; text-size-adjust: 100%; width: 600px; margin:=
+ 0px auto; border-radius: 8px 8px 0px 0px;" width=3D"600">
+													<tbody>
+														<tr>
+															<td align=3D"center" style=3D"border-collapse: collapse !imp=
+ortant; text-size-adjust: 100%;" valign=3D"top">
+															<table align=3D"center" border=3D"0" cellpadding=3D"0" cells=
+pacing=3D"0" class=3D"w100pc" style=3D"border-collapse: collapse !important=
+; text-size-adjust: 100%; border-radius: 8px;" width=3D"100%">
+																<tbody>
+																	<tr>
+																		<td align=3D"center" style=3D"border-collapse: collapse !=
+important; text-size-adjust: 100%;" valign=3D"top">
+																		<table align=3D"center" border=3D"0" cellpadding=3D"0" ce=
+llspacing=3D"0" class=3D"w90pc" style=3D"border-collapse: collapse !importa=
+nt; text-size-adjust: 100%; width: 552px; margin: 0px auto; border-radius: =
+8px;" width=3D"552">
+																			<tbody>
+																				<tr>
+																					<td align=3D"center" class=3D"padl10" style=3D"border-=
+collapse: collapse !important; text-size-adjust: 100%; font-family: &quot;E=
+ncode Sans&quot;, Helvetica, sans-serif; font-size: 21px; line-height: 38px=
+; color: rgb(25, 31, 41); font-weight: 700; text-align: center; letter-spac=
+ing: -1px; padding: 24px 18px 16px;" valign=3D"top">Mise &agrave; jour de n=
+os Conditions G&eacute;n&eacute;rales et Tarifaires</td>
+																				</tr>
+																				<tr>
+																				</tr>
+																			</tbody>
+																		</table>
+
+																		<table align=3D"center" border=3D"0" cellpadding=3D"0" ce=
+llspacing=3D"0" class=3D"w90pc" style=3D"border-collapse: collapse !importa=
+nt; text-size-adjust: 100%; width: 552px; margin: 0px auto;" width=3D"552">
+																			<tbody>
+																				<tr>
+																					<td align=3D"center" class=3D"w90pc" style=3D"text-siz=
+e-adjust: 100%; font-family: Sarabun, Helvetica, Arial, sans-serif; font-si=
+ze: 16px; line-height: 21px; color: rgb(25, 31, 41); padding-left: 18px; pa=
+dding-right: 18px; padding-bottom: 24px; border-collapse: collapse !importa=
+nt;" valign=3D"top">Bonjour Kyllian,<br />
+																					<br />
+																					Nous faisons &eacute;voluer nos Conditions G&eacute;n&=
+eacute;rales et Tarifaires.<br />
+																					<br />
+																					Vous pouvez retrouver toutes ces &eacute;volutions dir=
+ectement sur&nbsp;<a href=3D"https://t.fr.communications.nickel.eu/r/?id=3D=
+h2376218a,1f6a6bb,92dac" rel=3D"noopener noreferrer" style=3D"color: rgb(25=
+, 31, 41);"><u>notre site internet</u></a>&nbsp;ou en cliquant sur le lien =
+ci-dessous&nbsp;??</td>
+																				</tr>
+																			</tbody>
+																		</table>
+																		</td>
+																	</tr>
+																	<tr>
+																		<td align=3D"center" class=3D"padl20 padr20" style=3D"bor=
+der-collapse: collapse !important; text-size-adjust: 100%;" valign=3D"top">=
+<a class=3D"button-orange padl20 padr20" href=3D"https://t.fr.communication=
+s.nickel.eu/r/?id=3Dh2376218a,1f6a6bb,92dad" rel=3D"noopener noreferrer" st=
+yle=3D"color: rgb(255, 255, 255); font-family: Sarabun, Helvetica, Arial, s=
+ans-serif; font-size: 16px; line-height: 20px; text-decoration-line: none; =
+background-color: rgb(255, 95, 0); display: inline-block; border-radius: 25=
+px; padding: 9px 20px;" title=3D"Je consulte les Conditions G=E9n=E9rales e=
+t Tarifaires">Je consulte les Conditions G&eacute;n&eacute;rales et Tarifai=
+res</a></td>
+																	</tr>
+																	<tr>
+																	</tr>
+																</tbody>
+															</table>
+
+															<table align=3D"center" border=3D"0" cellpadding=3D"0" cells=
+pacing=3D"0" class=3D"w90pc" style=3D"border-collapse: collapse !important;=
+ text-size-adjust: 100%; width: 552px; margin: 0px auto;" width=3D"552">
+																<tbody>
+																	<tr>
+																		<td align=3D"center" class=3D"w90pc" style=3D"text-size-a=
+djust: 100%; font-family: Sarabun, Helvetica, Arial, sans-serif; font-size:=
+ 16px; line-height: 21px; color: rgb(25, 31, 41); padding: 24px 18px; borde=
+r-collapse: collapse !important;" valign=3D"top">Ces nouvelles conditions s=
+eront applicables &agrave; partir du 1er octobre prochain.*<br />
+																		<br />
+																		Bien s&ucirc;r, si vous avez le moindre doute, vous pouve=
+z contacter nos conseillers Nickel, qui restent &agrave; votre &eacute;cout=
+e par t&eacute;l&eacute;phone au 01 76 49 00 00 du lundi au vendredi de 8h3=
+0 &agrave; 19h et le samedi de 9h &agrave; 18h.<br />
+																		<br />
+																		<i>*Si vous n&rsquo;acceptez pas ces modifications de nos=
+ Conditions G&eacute;n&eacute;rales et Tarifaires, vous pouvez cl&ocirc;tur=
+er votre compte Nickel sans d&eacute;lai et sans frais dans un d&eacute;lai=
+ de 2 mois.</i></td>
+																	</tr>
+																</tbody>
+															</table>
+															</td>
+														</tr>
+													</tbody>
+												</table>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+
+						<table align=3D"center" bgcolor=3D"#ffffff" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" class=3D"w100pc bg-blue-light darkmode2" style=3D"=
+text-size-adjust: 100%; color: rgba(0, 0, 0, 0.88); font-family: &quot;SF P=
+ro Text&quot;, system-ui, sans-serif; font-size: 17px; letter-spacing: -0.3=
+7px; margin: 0px auto; width: 600px; border-collapse: collapse !important;"=
+ width=3D"600">
+							<tbody>
+								<tr>
+									<td align=3D"center" style=3D"border-collapse: collapse !important=
+; text-size-adjust: 100%; padding-top: 8px;" valign=3D"top">
+									<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" class=3D"w90pc border-black" style=3D"border-collapse: collapse !imp=
+ortant; text-size-adjust: 100%; margin: 0px auto; width: 552px; border-top:=
+ 1px solid rgb(244, 246, 249);" width=3D"552">
+										<tbody>
+											<tr>
+												<td align=3D"center" style=3D"border-collapse: collapse !import=
+ant; text-size-adjust: 100%; padding-top: 16px; padding-bottom: 16px;" vali=
+gn=3D"top">
+												<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspac=
+ing=3D"0" style=3D"border-collapse: collapse !important; text-size-adjust: =
+100%;" width=3D"100%">
+													<tbody>
+														<tr>
+															<td align=3D"left" class=3D"w49pc" style=3D"border-collapse:=
+ collapse !important; text-size-adjust: 100%;" valign=3D"middle"><a href=3D=
+"https://t.fr.communications.nickel.eu/r/?id=3Dh2376218a,1f6a6bb,92dae" rel=
+=3D"noopener noreferrer"><img align=3D"left" alt=3D"Nickel" class=3D"light-=
+img" src=3D"https://relay.icloud-mpp.com/?token=3D968101c421c649a599414d29f=
+65fee9a-2w80oo64qruncdqot4ax1sr0kn3aal845jwf4f5gztv594y1da-vaznng1ikh94ffln=
+8icsw7ycku7qbchgw6brgboers1kyuhc6gh3lx07bjzv6ngpqxrkppjnysppq0crodyaj3b84m8=
+38ve5731o8uzl3gnpa4hx93hr0gisernk77rjft4bzgcuphodv9p5i920v891b9iy7y69cl81mt=
+06uf5snssvya4xu0xmzajs6a2g3ttnv36wshwhvb18ecbu4sfym3sry4akxzh6ag86j32qqrspr=
+18j5bt83xdeihcewwrxqzber7sj864sdffm60l1qmsm0a86z7y0dd5kjs0oobh64pkj0enuv0p8=
+pngbg2gwug7mdo7we5h55uj9uai93o6ewz25ut5n62z5rykfyg4j82a3nd2b0m1axk1xcqyajy3=
+rlwk&amp;uri=3Dhttps%3A%2F%2Fnickel-mid-prod1-res.adobe-campaign.com%2Fres%=
+2Fnickel_mid_prod1%2Faf14247c1752e5903760c78519b4b774.png" style=3D"display=
+: block; border: 0px; padding: 0px; text-align: center; color: rgb(0, 0, 0)=
+; font-family: &quot;Trebuchet MS&quot;, Arial, sans-serif; font-size: 24px=
+; font-weight: bold; text-decoration-line: none;" width=3D"100" /></a></td>
+															<td align=3D"right" class=3D"w49pc darkmode-txt" style=3D"te=
+xt-size-adjust: 100%; text-align: right; color: rgb(25, 31, 41); line-heigh=
+t: 21px; font-family: Sarabun, Helvetica, Arial, sans-serif; font-size: 16p=
+x; border-collapse: collapse !important;" valign=3D"middle">&Agrave; tr&egr=
+ave;s bient&ocirc;t,<br />
+															L&rsquo;&eacute;quipe Nickel</td>
+														</tr>
+													</tbody>
+												</table>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+
+						<table align=3D"center" bgcolor=3D"#373f51" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" class=3D"w100pc" style=3D"text-size-adjust: 100%; =
+color: rgba(0, 0, 0, 0.88); font-family: &quot;SF Pro Text&quot;, system-ui=
+, sans-serif; font-size: 17px; letter-spacing: -0.37px; margin: 0px auto; w=
+idth: 600px; border-collapse: collapse !important;" width=3D"600">
+							<tbody>
+								<tr>
+									<td align=3D"center" style=3D"border-collapse: collapse !important=
+; text-size-adjust: 100%; padding-top: 32px;" valign=3D"top">
+									<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" class=3D"w90pc" style=3D"border-collapse: collapse !important; text-=
+size-adjust: 100%; margin: 0px auto; border-radius: 8px; width: 552px;" wid=
+th=3D"552">
+										<tbody>
+											<tr>
+												<td align=3D"center" class=3D"fontsize26" style=3D"text-size-ad=
+just: 100%; color: rgb(255, 255, 255); line-height: 31px; letter-spacing: -=
+1px; padding-bottom: 32px; font-family: Muller, &quot;Trebuchet MS&quot;, H=
+elvetica, sans-serif; font-size: 26px; font-weight: 700; border-collapse: c=
+ollapse !important;" valign=3D"top">Prot&eacute;gez-vous contre la FRAUDE&n=
+bsp;!</td>
+											</tr>
+											<tr>
+												<td align=3D"center" style=3D"border-collapse: collapse !import=
+ant; text-size-adjust: 100%; padding-bottom: 24px;" valign=3D"top">
+												<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspac=
+ing=3D"0" class=3D"w100pc" style=3D"border-collapse: collapse !important; t=
+ext-size-adjust: 100%; margin: 0px auto; width: 552px;" width=3D"552">
+													<tbody>
+														<tr>
+															<td align=3D"center" class=3D"w15pc" style=3D"border-collaps=
+e: collapse !important; text-size-adjust: 100%;" valign=3D"middle" width=3D=
+"32"><img align=3D"center" alt=3D"" height=3D"32" src=3D"https://relay.iclo=
+ud-mpp.com/?token=3D968101c421c649a599414d29f65fee9a-2w80oo64qruncdqot4ax1s=
+r0kn3aal845jwf4f5gztv594y1da-vaznng1ikh94ffln8icsw7ycku7qbchgw6brgboers1kyu=
+hc6gh3lx07bjzv6ngpqxrkppjnysppq0crodyaj3b84m838ve5731o8uzl3gnpa4hx93hr0gise=
+rnk77rjft4bzgcuphodv9p5i920v891b9iy7y69cl81mt06uf5snssvya4xu0xmzajs6a2g3ttn=
+v36wshwhvb18ecbu4sfym3sry4akxzh6ag86j32qqrspr18j5bt83xdeihcewwrxqzber7sj864=
+sdffm60l1qmsm0a86z7y0dd5kjs0oobh64pkj0enuv0p8pngbg2gwug7mdo7we5h55uj9uai93o=
+6ewz25ut5n62z5rykfyg4j82a3nd2b0m1axk1xcqyajy3rlwk&amp;uri=3Dhttps%3A%2F%2Fn=
+ickel-mid-prod1-res.adobe-campaign.com%2Fres%2Fnickel_mid_prod1%2F5da225112=
+a6c0635a84762ecc29d30a2.png" style=3D"display: block; border: 0px; width: 3=
+2px;" width=3D"32" /></td>
+															<td align=3D"center" class=3D"nomob" style=3D"border-collaps=
+e: collapse !important; text-size-adjust: 100%;" valign=3D"middle" width=3D=
+"8">&nbsp;</td>
+															<td align=3D"center" class=3D"w85pc padl10" style=3D"text-si=
+ze-adjust: 100%; color: rgb(255, 255, 255); line-height: 21px; font-family:=
+ Sarabun, Helvetica, Arial, sans-serif; font-size: 16px; border-collapse: c=
+ollapse !important;" valign=3D"top" width=3D"512"><strong>Ne communiquez JA=
+MAIS vos donn&eacute;es bancaires</strong></td>
+														</tr>
+													</tbody>
+												</table>
+
+												<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspac=
+ing=3D"0" class=3D"w100pc" style=3D"border-collapse: collapse !important; t=
+ext-size-adjust: 100%; margin: 0px auto; width: 552px;" width=3D"552">
+													<tbody>
+														<tr>
+															<td align=3D"center" class=3D"w85pc padl10" style=3D"text-si=
+ze-adjust: 100%; color: rgb(255, 255, 255); line-height: 21px; font-family:=
+ Sarabun, Helvetica, Arial, sans-serif; font-size: 16px; border-collapse: c=
+ollapse !important;" valign=3D"top" width=3D"512"><br />
+															Nos conseillers Nickel ne vous demanderont JAMAIS vos inform=
+ations personnelles telles que : vos identifiants de connexion &agrave; vot=
+re espace client (identifiant et mot de passe), vos codes de carte Nickel, =
+votre code PIN ou les codes re&ccedil;us par SMS, email ou notification.</t=
+d>
+														</tr>
+													</tbody>
+												</table>
+												</td>
+											</tr>
+											<tr>
+												<td align=3D"center" style=3D"border-collapse: collapse !import=
+ant; text-size-adjust: 100%; padding-bottom: 24px;" valign=3D"top">
+												<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspac=
+ing=3D"0" class=3D"w100pc" style=3D"border-collapse: collapse !important; t=
+ext-size-adjust: 100%; margin: 0px auto; width: 552px;" width=3D"552">
+													<tbody>
+														<tr>
+															<td align=3D"center" class=3D"w15pc" style=3D"border-collaps=
+e: collapse !important; text-size-adjust: 100%;" valign=3D"middle" width=3D=
+"32"><img align=3D"center" alt=3D"" height=3D"32" src=3D"https://relay.iclo=
+ud-mpp.com/?token=3D968101c421c649a599414d29f65fee9a-2w80oo64qruncdqot4ax1s=
+r0kn3aal845jwf4f5gztv594y1da-vaznng1ikh94ffln8icsw7ycku7qbchgw6brgboers1kyu=
+hc6gh3lx07bjzv6ngpqxrkppjnysppq0crodyaj3b84m838ve5731o8uzl3gnpa4hx93hr0gise=
+rnk77rjft4bzgcuphodv9p5i920v891b9iy7y69cl81mt06uf5snssvya4xu0xmzajs6a2g3ttn=
+v36wshwhvb18ecbu4sfym3sry4akxzh6ag86j32qqrspr18j5bt83xdeihcewwrxqzber7sj864=
+sdffm60l1qmsm0a86z7y0dd5kjs0oobh64pkj0enuv0p8pngbg2gwug7mdo7we5h55uj9uai93o=
+6ewz25ut5n62z5rykfyg4j82a3nd2b0m1axk1xcqyajy3rlwk&amp;uri=3Dhttps%3A%2F%2Fn=
+ickel-mid-prod1-res.adobe-campaign.com%2Fres%2Fnickel_mid_prod1%2Fc4eddfa7a=
+a4ebc5ffe6626e812d755db.png" style=3D"display: block; border: 0px; width: 3=
+2px;" width=3D"32" /></td>
+															<td align=3D"center" class=3D"nomob" style=3D"border-collaps=
+e: collapse !important; text-size-adjust: 100%;" valign=3D"middle" width=3D=
+"8">&nbsp;</td>
+															<td align=3D"center" class=3D"w85pc padl10" style=3D"text-si=
+ze-adjust: 100%; color: rgb(255, 255, 255); line-height: 21px; font-family:=
+ Sarabun, Helvetica, Arial, sans-serif; font-size: 16px; border-collapse: c=
+ollapse !important;" valign=3D"top" width=3D"512"><strong>V&eacute;rifiez l=
+&rsquo;exp&eacute;diteur des e-mails Nickel: attention au phishing !</stron=
+g></td>
+														</tr>
+													</tbody>
+												</table>
+
+												<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspac=
+ing=3D"0" class=3D"w100pc" style=3D"border-collapse: collapse !important; t=
+ext-size-adjust: 100%; margin: 0px auto; width: 552px;" width=3D"552">
+													<tbody>
+														<tr>
+															<td align=3D"center" class=3D"w85pc padl10" style=3D"text-si=
+ze-adjust: 100%; color: rgb(255, 255, 255); line-height: 21px; font-family:=
+ Sarabun, Helvetica, Arial, sans-serif; font-size: 16px; border-collapse: c=
+ollapse !important;" valign=3D"top" width=3D"512"><br />
+															Par e-mail, Nickel ne communique avec vous que depuis les ad=
+resses mails se terminant par @compte-nickel.fr, @fr.communications.nickel.=
+eu, ou @nickel.eu. Par ailleurs, nous ne vous enverrons jamais un lien vous=
+ amenant &agrave; vous connecter sur votre espace client.</td>
+														</tr>
+													</tbody>
+												</table>
+												</td>
+											</tr>
+											<tr>
+												<td align=3D"center" style=3D"border-collapse: collapse !import=
+ant; text-size-adjust: 100%; padding-bottom: 24px;" valign=3D"top">
+												<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspac=
+ing=3D"0" class=3D"w100pc" style=3D"border-collapse: collapse !important; t=
+ext-size-adjust: 100%; margin: 0px auto; width: 552px;" width=3D"552">
+													<tbody>
+														<tr>
+															<td align=3D"center" class=3D"w15pc" style=3D"border-collaps=
+e: collapse !important; text-size-adjust: 100%;" valign=3D"middle" width=3D=
+"32"><img align=3D"center" alt=3D"" height=3D"32" src=3D"https://relay.iclo=
+ud-mpp.com/?token=3D968101c421c649a599414d29f65fee9a-2w80oo64qruncdqot4ax1s=
+r0kn3aal845jwf4f5gztv594y1da-vaznng1ikh94ffln8icsw7ycku7qbchgw6brgboers1kyu=
+hc6gh3lx07bjzv6ngpqxrkppjnysppq0crodyaj3b84m838ve5731o8uzl3gnpa4hx93hr0gise=
+rnk77rjft4bzgcuphodv9p5i920v891b9iy7y69cl81mt06uf5snssvya4xu0xmzajs6a2g3ttn=
+v36wshwhvb18ecbu4sfym3sry4akxzh6ag86j32qqrspr18j5bt83xdeihcewwrxqzber7sj864=
+sdffm60l1qmsm0a86z7y0dd5kjs0oobh64pkj0enuv0p8pngbg2gwug7mdo7we5h55uj9uai93o=
+6ewz25ut5n62z5rykfyg4j82a3nd2b0m1axk1xcqyajy3rlwk&amp;uri=3Dhttps%3A%2F%2Fn=
+ickel-mid-prod1-res.adobe-campaign.com%2Fres%2Fnickel_mid_prod1%2F223223d5a=
+d07040abeeb280e7da7e928.png" style=3D"display: block; border: 0px; width: 3=
+2px;" width=3D"32" /></td>
+															<td align=3D"center" class=3D"nomob" style=3D"border-collaps=
+e: collapse !important; text-size-adjust: 100%;" valign=3D"middle" width=3D=
+"8">&nbsp;</td>
+															<td align=3D"center" class=3D"w85pc padl10" style=3D"text-si=
+ze-adjust: 100%; color: rgb(255, 255, 255); line-height: 21px; font-family:=
+ Sarabun, Helvetica, Arial, sans-serif; font-size: 16px; border-collapse: c=
+ollapse !important;" valign=3D"top" width=3D"512"><strong>Payez en toute s&=
+eacute;curit&eacute;</strong></td>
+														</tr>
+													</tbody>
+												</table>
+
+												<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspac=
+ing=3D"0" class=3D"w100pc" style=3D"border-collapse: collapse !important; t=
+ext-size-adjust: 100%; margin: 0px auto; width: 552px;" width=3D"552">
+													<tbody>
+														<tr>
+															<td align=3D"center" class=3D"w85pc padl10" style=3D"text-si=
+ze-adjust: 100%; color: rgb(255, 255, 255); line-height: 21px; font-family:=
+ Sarabun, Helvetica, Arial, sans-serif; font-size: 16px; border-collapse: c=
+ollapse !important;" valign=3D"top" width=3D"512"><br />
+															Nous vous recommandons d&#39;enregistrer votre carte Nickel =
+uniquement sur des sites internet de confiance aupr&egrave;s desquels vous =
+effectuez habituellement vos achats. Vos coordonn&eacute;es de carte Nickel=
+ doivent rester dans tous les cas strictement confidentielles : ne les part=
+agez &agrave; personne, pas m&ecirc;me &agrave; vos proches ! Vous &ecirc;t=
+es responsable de vos donn&eacute;es. Pour plus de s&eacute;curit&eacute;, =
+privil&eacute;giez l&rsquo;application Nickel pour recevoir vos confirmatio=
+ns de paiement en temps r&eacute;el directement dessus et consulter vos op&=
+eacute;rations o&ugrave; que vous soyez.</td>
+														</tr>
+													</tbody>
+												</table>
+												</td>
+											</tr>
+											<tr>
+												<td align=3D"center" style=3D"border-collapse: collapse !import=
+ant; text-size-adjust: 100%; padding-bottom: 24px;" valign=3D"top">
+												<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspac=
+ing=3D"0" class=3D"w100pc" style=3D"border-collapse: collapse !important; t=
+ext-size-adjust: 100%; margin: 0px auto; width: 552px;" width=3D"552">
+													<tbody>
+														<tr>
+															<td align=3D"center" class=3D"w15pc" style=3D"border-collaps=
+e: collapse !important; text-size-adjust: 100%;" valign=3D"middle" width=3D=
+"32"><img align=3D"center" alt=3D"" height=3D"32" src=3D"https://relay.iclo=
+ud-mpp.com/?token=3D968101c421c649a599414d29f65fee9a-2w80oo64qruncdqot4ax1s=
+r0kn3aal845jwf4f5gztv594y1da-vaznng1ikh94ffln8icsw7ycku7qbchgw6brgboers1kyu=
+hc6gh3lx07bjzv6ngpqxrkppjnysppq0crodyaj3b84m838ve5731o8uzl3gnpa4hx93hr0gise=
+rnk77rjft4bzgcuphodv9p5i920v891b9iy7y69cl81mt06uf5snssvya4xu0xmzajs6a2g3ttn=
+v36wshwhvb18ecbu4sfym3sry4akxzh6ag86j32qqrspr18j5bt83xdeihcewwrxqzber7sj864=
+sdffm60l1qmsm0a86z7y0dd5kjs0oobh64pkj0enuv0p8pngbg2gwug7mdo7we5h55uj9uai93o=
+6ewz25ut5n62z5rykfyg4j82a3nd2b0m1axk1xcqyajy3rlwk&amp;uri=3Dhttps%3A%2F%2Fn=
+ickel-mid-prod1-res.adobe-campaign.com%2Fres%2Fnickel_mid_prod1%2F6d07407ca=
+9759a24cd95a4be62c8aca1.png" style=3D"display: block; border: 0px; width: 3=
+2px;" width=3D"32" /></td>
+															<td align=3D"center" class=3D"nomob" style=3D"border-collaps=
+e: collapse !important; text-size-adjust: 100%;" valign=3D"middle" width=3D=
+"8">&nbsp;</td>
+															<td align=3D"center" class=3D"w85pc padl10" style=3D"text-si=
+ze-adjust: 100%; color: rgb(255, 255, 255); line-height: 21px; font-family:=
+ Sarabun, Helvetica, Arial, sans-serif; font-size: 16px; border-collapse: c=
+ollapse !important;" valign=3D"top" width=3D"512"><strong>V&eacute;rifiez q=
+ue vous parlez avec un compte Nickel officiel sur les r&eacute;seaux sociau=
+x !</strong></td>
+														</tr>
+													</tbody>
+												</table>
+
+												<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspac=
+ing=3D"0" class=3D"w100pc" style=3D"border-collapse: collapse !important; t=
+ext-size-adjust: 100%; margin: 0px auto; width: 552px;" width=3D"552">
+													<tbody>
+														<tr>
+															<td align=3D"center" class=3D"w85pc padl10" style=3D"text-si=
+ze-adjust: 100%; color: rgb(255, 255, 255); line-height: 21px; font-family:=
+ Sarabun, Helvetica, Arial, sans-serif; font-size: 16px; border-collapse: c=
+ollapse !important;" valign=3D"top" width=3D"512"><br />
+															Sur les r&eacute;seaux sociaux, nous sommes pr&eacute;sents =
+uniquement sur Instagram, Facebook et TikTok. Attention aux faux comptes qu=
+i pourraient vous contacter : v&eacute;rifiez bien le nom du compte et le b=
+adge bleu. Un doute ? Signalez les emails suspects et les faux profils via =
+notre email d&eacute;di&eacute; :&nbsp;<a href=3D"mailto:fraudeur@compte-ni=
+ckel.fr">fraudeur@compte-nickel.fr</a>.</td>
+														</tr>
+													</tbody>
+												</table>
+												</td>
+											</tr>
+											<tr>
+												<td align=3D"center" style=3D"border-collapse: collapse !import=
+ant; text-size-adjust: 100%;" valign=3D"top">
+												<table align=3D"center" bgcolor=3D"#ffffff" border=3D"0" cellpa=
+dding=3D"0" cellspacing=3D"0" class=3D"w100pc" style=3D"border-collapse: co=
+llapse !important; text-size-adjust: 100%; margin: 0px auto; width: 552px;"=
+ width=3D"552">
+													<tbody>
+														<tr>
+															<td align=3D"center" style=3D"border-collapse: collapse !imp=
+ortant; text-size-adjust: 100%; line-height: 1px; font-size: 1px;" valign=
+=3D"top">&nbsp;</td>
+														</tr>
+													</tbody>
+												</table>
+												</td>
+											</tr>
+											<tr>
+												<td align=3D"center" style=3D"border-collapse: collapse !import=
+ant; text-size-adjust: 100%; text-align: center; color: rgb(255, 255, 255);=
+ line-height: 24px; padding-top: 32px; padding-bottom: 16px; font-family: S=
+arabun, Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 700;" v=
+align=3D"top">Retrouvez-nous sur les r&eacute;seaux sociaux</td>
+											</tr>
+											<tr>
+												<td align=3D"center" style=3D"border-collapse: collapse !import=
+ant; text-size-adjust: 100%; padding-bottom: 32px;" valign=3D"top">
+												<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspac=
+ing=3D"0" style=3D"border-collapse: collapse !important; text-size-adjust: =
+100%; margin: 0px auto; width: 144px;" width=3D"144">
+													<tbody>
+														<tr>
+															<td align=3D"center" style=3D"border-collapse: collapse !imp=
+ortant; text-size-adjust: 100%;" valign=3D"top" width=3D"24"><a href=3D"htt=
+ps://t.fr.communications.nickel.eu/r/?id=3Dh2376218a,1f6a6bb,92daf" rel=3D"=
+noopener noreferrer" title=3D"Suivez-nous sur Facebook"><img align=3D"cente=
+r" alt=3D"Facebook" class=3D"effect-plus" src=3D"https://relay.icloud-mpp.c=
+om/?token=3D968101c421c649a599414d29f65fee9a-2w80oo64qruncdqot4ax1sr0kn3aal=
+845jwf4f5gztv594y1da-vaznng1ikh94ffln8icsw7ycku7qbchgw6brgboers1kyuhc6gh3lx=
+07bjzv6ngpqxrkppjnysppq0crodyaj3b84m838ve5731o8uzl3gnpa4hx93hr0gisernk77rjf=
+t4bzgcuphodv9p5i920v891b9iy7y69cl81mt06uf5snssvya4xu0xmzajs6a2g3ttnv36wshwh=
+vb18ecbu4sfym3sry4akxzh6ag86j32qqrspr18j5bt83xdeihcewwrxqzber7sj864sdffm60l=
+1qmsm0a86z7y0dd5kjs0oobh64pkj0enuv0p8pngbg2gwug7mdo7we5h55uj9uai93o6ewz25ut=
+5n62z5rykfyg4j82a3nd2b0m1axk1xcqyajy3rlwk&amp;uri=3Dhttps%3A%2F%2Fnickel-mi=
+d-prod1-res.adobe-campaign.com%2Fres%2Fnickel_mid_prod1%2Fc5ab73a99598af955=
+566d478b13c0cc9.png" style=3D"display: block; border: 0px; width: 24px;" wi=
+dth=3D"24" /></a></td>
+															<td align=3D"center" style=3D"border-collapse: collapse !imp=
+ortant; text-size-adjust: 100%;" valign=3D"middle" width=3D"16">&nbsp;</td>
+															<td align=3D"center" style=3D"border-collapse: collapse !imp=
+ortant; text-size-adjust: 100%;" valign=3D"top" width=3D"24"><a href=3D"htt=
+ps://t.fr.communications.nickel.eu/r/?id=3Dh2376218a,1f6a6bb,92db0" rel=3D"=
+noopener noreferrer" title=3D"Suivez-nous sur Instagram"><img align=3D"cent=
+er" alt=3D"Instagram" class=3D"effect-plus" src=3D"https://relay.icloud-mpp=
+.com/?token=3D968101c421c649a599414d29f65fee9a-2w80oo64qruncdqot4ax1sr0kn3a=
+al845jwf4f5gztv594y1da-vaznng1ikh94ffln8icsw7ycku7qbchgw6brgboers1kyuhc6gh3=
+lx07bjzv6ngpqxrkppjnysppq0crodyaj3b84m838ve5731o8uzl3gnpa4hx93hr0gisernk77r=
+jft4bzgcuphodv9p5i920v891b9iy7y69cl81mt06uf5snssvya4xu0xmzajs6a2g3ttnv36wsh=
+whvb18ecbu4sfym3sry4akxzh6ag86j32qqrspr18j5bt83xdeihcewwrxqzber7sj864sdffm6=
+0l1qmsm0a86z7y0dd5kjs0oobh64pkj0enuv0p8pngbg2gwug7mdo7we5h55uj9uai93o6ewz25=
+ut5n62z5rykfyg4j82a3nd2b0m1axk1xcqyajy3rlwk&amp;uri=3Dhttps%3A%2F%2Fnickel-=
+mid-prod1-res.adobe-campaign.com%2Fres%2Fnickel_mid_prod1%2F663a0e397258612=
+450ae081b810fc13a.png" style=3D"display: block; border: 0px; width: 24px;" =
+width=3D"24" /></a></td>
+															<td align=3D"center" style=3D"border-collapse: collapse !imp=
+ortant; text-size-adjust: 100%;" valign=3D"middle" width=3D"16">&nbsp;</td>
+															<td align=3D"center" style=3D"border-collapse: collapse !imp=
+ortant; text-size-adjust: 100%;" valign=3D"top" width=3D"24"><a href=3D"htt=
+ps://t.fr.communications.nickel.eu/r/?id=3Dh2376218a,1f6a6bb,92db1" rel=3D"=
+noopener noreferrer" title=3D"Suivez-nous sur TikTok"><img align=3D"center"=
+ alt=3D"TikTok" class=3D"effect-plus" src=3D"https://relay.icloud-mpp.com/?=
+token=3D968101c421c649a599414d29f65fee9a-2w80oo64qruncdqot4ax1sr0kn3aal845j=
+wf4f5gztv594y1da-vaznng1ikh94ffln8icsw7ycku7qbchgw6brgboers1kyuhc6gh3lx07bj=
+zv6ngpqxrkppjnysppq0crodyaj3b84m838ve5731o8uzl3gnpa4hx93hr0gisernk77rjft4bz=
+gcuphodv9p5i920v891b9iy7y69cl81mt06uf5snssvya4xu0xmzajs6a2g3ttnv36wshwhvb18=
+ecbu4sfym3sry4akxzh6ag86j32qqrspr18j5bt83xdeihcewwrxqzber7sj864sdffm60l1qms=
+m0a86z7y0dd5kjs0oobh64pkj0enuv0p8pngbg2gwug7mdo7we5h55uj9uai93o6ewz25ut5n62=
+z5rykfyg4j82a3nd2b0m1axk1xcqyajy3rlwk&amp;uri=3Dhttps%3A%2F%2Fnickel-mid-pr=
+od1-res.adobe-campaign.com%2Fres%2Fnickel_mid_prod1%2Fb2cc9bd3ee9d8b80d1a73=
+e8f023efd0d.png" style=3D"display: block; border: 0px; width: 24px;" width=
+=3D"24" /></a></td>
+															<td align=3D"center" style=3D"border-collapse: collapse !imp=
+ortant; text-size-adjust: 100%;" valign=3D"middle" width=3D"16">&nbsp;</td>
+															<td align=3D"center" style=3D"border-collapse: collapse !imp=
+ortant; text-size-adjust: 100%;" valign=3D"top" width=3D"24"><a href=3D"htt=
+ps://t.fr.communications.nickel.eu/r/?id=3Dh2376218a,1f6a6bb,92db2" rel=3D"=
+noopener noreferrer" title=3D"Consultez le Centre d'Aide"><img align=3D"cen=
+ter" alt=3D"Centre d'Aide" class=3D"effect-plus" src=3D"https://relay.iclou=
+d-mpp.com/?token=3D968101c421c649a599414d29f65fee9a-2w80oo64qruncdqot4ax1sr=
+0kn3aal845jwf4f5gztv594y1da-vaznng1ikh94ffln8icsw7ycku7qbchgw6brgboers1kyuh=
+c6gh3lx07bjzv6ngpqxrkppjnysppq0crodyaj3b84m838ve5731o8uzl3gnpa4hx93hr0giser=
+nk77rjft4bzgcuphodv9p5i920v891b9iy7y69cl81mt06uf5snssvya4xu0xmzajs6a2g3ttnv=
+36wshwhvb18ecbu4sfym3sry4akxzh6ag86j32qqrspr18j5bt83xdeihcewwrxqzber7sj864s=
+dffm60l1qmsm0a86z7y0dd5kjs0oobh64pkj0enuv0p8pngbg2gwug7mdo7we5h55uj9uai93o6=
+ewz25ut5n62z5rykfyg4j82a3nd2b0m1axk1xcqyajy3rlwk&amp;uri=3Dhttps%3A%2F%2Fni=
+ckel-mid-prod1-res.adobe-campaign.com%2Fres%2Fnickel_mid_prod1%2F87efe785fd=
+25baa7fff81b189ed349ee.png" style=3D"display: block; border: 0px; width: 24=
+px;" width=3D"24" /></a></td>
+														</tr>
+													</tbody>
+												</table>
+												</td>
+											</tr>
+											<tr>
+											</tr>
+											<tr>
+												<td align=3D"center" class=3D"footer-txt" style=3D"text-size-ad=
+just: 100%; text-align: center; color: rgb(55, 63, 81); line-height: 1px; f=
+ont-family: Sarabun, Helvetica, Arial, sans-serif; font-size: 1px; border-c=
+ollapse: collapse !important;" valign=3D"top">N&rsquo;attendez pas pour t&e=
+acute;l&eacute;charger l&rsquo;application</td>
+											</tr>
+											<tr>
+												<td align=3D"center" style=3D"border-collapse: collapse !import=
+ant; text-size-adjust: 100%; padding-bottom: 20px;" valign=3D"top">
+												<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspac=
+ing=3D"0" style=3D"border-collapse: collapse !important; text-size-adjust: =
+100%; margin: 0px auto; width: 271px;" width=3D"271">
+													<tbody>
+														<tr>
+															<td align=3D"center" style=3D"border-collapse: collapse !imp=
+ortant; text-size-adjust: 100%;" valign=3D"top" width=3D"120"><a href=3D"ht=
+tps://t.fr.communications.nickel.eu/r/?id=3Dh2376218a,1f6a6bb,92db3" rel=3D=
+"noopener noreferrer" title=3D"T=E9l=E9charger l'app"><img align=3D"center"=
+ alt=3D"T=E9l=E9charger sur l'App Store" class=3D"effect-plus" src=3D"https=
+://relay.icloud-mpp.com/?token=3D968101c421c649a599414d29f65fee9a-2w80oo64q=
+runcdqot4ax1sr0kn3aal845jwf4f5gztv594y1da-vaznng1ikh94ffln8icsw7ycku7qbchgw=
+6brgboers1kyuhc6gh3lx07bjzv6ngpqxrkppjnysppq0crodyaj3b84m838ve5731o8uzl3gnp=
+a4hx93hr0gisernk77rjft4bzgcuphodv9p5i920v891b9iy7y69cl81mt06uf5snssvya4xu0x=
+mzajs6a2g3ttnv36wshwhvb18ecbu4sfym3sry4akxzh6ag86j32qqrspr18j5bt83xdeihceww=
+rxqzber7sj864sdffm60l1qmsm0a86z7y0dd5kjs0oobh64pkj0enuv0p8pngbg2gwug7mdo7we=
+5h55uj9uai93o6ewz25ut5n62z5rykfyg4j82a3nd2b0m1axk1xcqyajy3rlwk&amp;uri=3Dht=
+tps%3A%2F%2Fnickel-mid-prod1-res.adobe-campaign.com%2Fres%2Fnickel_mid_prod=
+1%2Ff68d6871f09c42750de24a00ae8e7d2d.png" style=3D"display: block; border: =
+0px; width: 120px;" width=3D"120" /></a></td>
+															<td align=3D"center" style=3D"border-collapse: collapse !imp=
+ortant; text-size-adjust: 100%;" valign=3D"middle" width=3D"16">&nbsp;</td>
+															<td align=3D"center" style=3D"border-collapse: collapse !imp=
+ortant; text-size-adjust: 100%;" valign=3D"top" width=3D"135"><a href=3D"ht=
+tps://t.fr.communications.nickel.eu/r/?id=3Dh2376218a,1f6a6bb,92db4" rel=3D=
+"noopener noreferrer" title=3D"T=E9l=E9charger sur Play Store"><img align=
+=3D"center" alt=3D"T=E9l=E9charger sur Play Store" class=3D"effect-plus" sr=
+c=3D"https://relay.icloud-mpp.com/?token=3D968101c421c649a599414d29f65fee9a=
+-2w80oo64qruncdqot4ax1sr0kn3aal845jwf4f5gztv594y1da-vaznng1ikh94ffln8icsw7y=
+cku7qbchgw6brgboers1kyuhc6gh3lx07bjzv6ngpqxrkppjnysppq0crodyaj3b84m838ve573=
+1o8uzl3gnpa4hx93hr0gisernk77rjft4bzgcuphodv9p5i920v891b9iy7y69cl81mt06uf5sn=
+ssvya4xu0xmzajs6a2g3ttnv36wshwhvb18ecbu4sfym3sry4akxzh6ag86j32qqrspr18j5bt8=
+3xdeihcewwrxqzber7sj864sdffm60l1qmsm0a86z7y0dd5kjs0oobh64pkj0enuv0p8pngbg2g=
+wug7mdo7we5h55uj9uai93o6ewz25ut5n62z5rykfyg4j82a3nd2b0m1axk1xcqyajy3rlwk&am=
+p;uri=3Dhttps%3A%2F%2Fnickel-mid-prod1-res.adobe-campaign.com%2Fres%2Fnicke=
+l_mid_prod1%2Fd4975580803822f0a2594b9a42077cbd.png" style=3D"display: block=
+; border: 0px; width: 135px;" width=3D"135" /></a></td>
+														</tr>
+													</tbody>
+												</table>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+
+						<table align=3D"center" bgcolor=3D"#f4f6f9" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" class=3D"w90pc" style=3D"text-size-adjust: 100%; c=
+olor: rgba(0, 0, 0, 0.88); font-family: &quot;SF Pro Text&quot;, system-ui,=
+ sans-serif; font-size: 17px; letter-spacing: -0.37px; margin: 0px auto; wi=
+dth: 600px; border-collapse: collapse !important;" width=3D"600">
+							<tbody>
+								<tr>
+									<td align=3D"center" style=3D"text-size-adjust: 100%; padding: 32p=
+x 20px; text-align: center; color: rgb(109, 113, 121); line-height: 18px; f=
+ont-family: Sarabun, Helvetica, Arial, sans-serif; font-size: 14px; border-=
+collapse: collapse !important;" valign=3D"top">Ceci est un email automatiqu=
+e, n&#39;y r&eacute;pondez pas, votre r&eacute;ponse ne sera pas re&ccedil;=
+ue par nos &eacute;quipes Financi&egrave;re des Paiements Electroniques, Et=
+ablissement de Paiement agr&eacute;&eacute; n&deg;16598R, S.A.S. au capital=
+ de 770&nbsp;440 euros - RCS CRETEIL n?753&nbsp;886&nbsp;092, 1, place des =
+Marseillais - 94220 Charenton Le&nbsp;Pont<br />
+									<br />
+									Nickel<br />
+									<br />
+									1 place des Marseillais , Charenton-le-Pont, 94220</td>
+								</tr>
+							</tbody>
+						</table>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			</td>
+		</tr>
+	</tbody>
+</table>
+</body>
+</html>
+
+--===============1623731363==--
