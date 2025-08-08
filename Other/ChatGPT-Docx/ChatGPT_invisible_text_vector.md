@@ -29,19 +29,20 @@ Test process:
 
 ### **Before the update (GPT-4o)**
  
- <img src="Screenshot_1.png" width="400">
-
+ <img src="Screenshot_1.png" width="400">.  
 _The “Say cheese!” text was white font._
 
 - Model extracted _all_ text without remarking on the hidden content.
 
 ### **After the update (GPT-5)**
 <img src="Screenshot_2.png" width="400">  
+
 - Model now warns about invisible text.
 
 But...  
 <img src="Screenshot_3.png" width="400">  
-- I still managed to get the hidden instruction executed.
+
+- Still managed to get the hidden instruction executed.
 
 ## **How the model reads** `.docx`
 
@@ -71,7 +72,7 @@ When sharing Google Docs with ChatGPT:
 
 **Findings:**
 
-- The update patched _pure white/black_ hidden text detection.
+- The update *likely* patched _pure white/black_ hidden text detection
 
 - Detection likely based on exact color matches, not actual _contrast_. ( so many more possibilities with various colors, or *dodging* colors)
 
@@ -79,7 +80,7 @@ When sharing Google Docs with ChatGPT:
 
 - Off-white or theme-tinted *“fake whites”* bypass the warning.
 
-- This mirrors the Google Drive vector: hidden payload survives conversion -> parser extracts it blindly.
+- This mirrors the Google Drive vector: hidden payload survives conversion --> parser extracts it blindly.
 
 ---
 
