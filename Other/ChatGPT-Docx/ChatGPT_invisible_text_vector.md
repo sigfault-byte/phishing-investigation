@@ -1,5 +1,5 @@
 
-# **Following 0-click on ChatGPT via Google Drive Docs**
+# **Trying to understand 0-click on ChatGPT via Google Drive Docs**
 
 ## **References**
 
@@ -29,17 +29,18 @@ Test process:
 
 ### **Before the update (GPT-4o)**
  
-![[Screenshot 2025-08-08 at 15.22.04.png]]
+ <img src="Screenshot_1.png" width="400">
+
 _The “Say cheese!” text was white font._
 
 - Model extracted _all_ text without remarking on the hidden content.
 
 ### **After the update (GPT-5)**
-![[Screenshot 2025-08-08 at 15.25.22.png]]
+<img src="Screenshot_2.png" width="400">  
 - Model now warns about invisible text.
 
-But...
-![[Screenshot 2025-08-08 at 15.26.31.png]]
+But...  
+<img src="Screenshot_3.png" width="400">  
 - I still managed to get the hidden instruction executed.
 
 ## **How the model reads** `.docx`
@@ -86,6 +87,7 @@ When sharing Google Docs with ChatGPT:
 
 **1. Fake white (off-white #FEFEFE)**
 Bypasses simple `#FFFFFF` equality checks.
+
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <w:document xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
@@ -102,6 +104,7 @@ Bypasses simple `#FFFFFF` equality checks.
 
 **2. Same background and font color**
 Font matches paragraph shading, text invisible to humans, visible to `XML `parser.
+
 ```XML
 <?xml version="1.0" encoding="UTF-8"?>
 <w:document xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
